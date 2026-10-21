@@ -1,0 +1,1935 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="A 12-week, five-day training plan for speed, strength, mobility, back health and conditioning, with a built-in log.">
+<meta name="theme-color" content="#EEF1F5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0E13" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Athlete Build">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" type="image/png" href="icon-192.png">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font-size:14px}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>12-Week Athlete Build</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Big+Shoulders+Display:wght@700;800;900&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: one ~780px coach's-card column. Slim sticky tab rail; each session reads top to bottom in training order, its blocks keyed by competition weight-plate colours (red 25 kg = speed/power, blue 20 = strength, yellow 15 = muscle, green 10 = engine, white 5 = ground & armor). */
+:root{
+  --bg:#EEF1F5; --surface:#FFFFFF; --sunken:#E4E8EE;
+  --ink:#0F141D; --ink-2:#3A4454; --muted:#5F697A; --rule:#D5DBE3;
+  --accent:#1F47C8; --on-accent:#FFFFFF; --accent-wash:rgba(31,71,200,.09);
+  --p-power:#D1352D; --p-strength:#1F47C8; --p-build:#DFA30E; --p-engine:#1C9155; --p-ground:#FFFFFF; --p-edge:#98A2B0;
+  --good:#17774A; --bad:#B02F28; --flag:#7F5500; --flag-wash:rgba(223,163,14,.16);
+  --shadow:0 1px 2px rgba(15,20,29,.05),0 2px 10px rgba(15,20,29,.04);
+  --font-display:"Big Shoulders Display","Arial Narrow","Roboto Condensed",Impact,sans-serif;
+  --font-body:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --radius:12px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0B0E13; --surface:#131821; --sunken:#1B2230;
+    --ink:#E7EBF1; --ink-2:#B7C0CD; --muted:#8C96A7; --rule:#262F3D;
+    --accent:#7D98FF; --on-accent:#0B0E13; --accent-wash:rgba(125,152,255,.13);
+    --p-power:#EF6B62; --p-strength:#7D98FF; --p-build:#EFC24A; --p-engine:#4CC387; --p-ground:#EDF0F4; --p-edge:#5C677A;
+    --good:#5BCB8F; --bad:#F27F76; --flag:#EDC25A; --flag-wash:rgba(239,194,74,.11);
+    --shadow:0 1px 2px rgba(0,0,0,.45);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0B0E13; --surface:#131821; --sunken:#1B2230;
+  --ink:#E7EBF1; --ink-2:#B7C0CD; --muted:#8C96A7; --rule:#262F3D;
+  --accent:#7D98FF; --on-accent:#0B0E13; --accent-wash:rgba(125,152,255,.13);
+  --p-power:#EF6B62; --p-strength:#7D98FF; --p-build:#EFC24A; --p-engine:#4CC387; --p-ground:#EDF0F4; --p-edge:#5C677A;
+  --good:#5BCB8F; --bad:#F27F76; --flag:#EDC25A; --flag-wash:rgba(239,194,74,.11);
+  --shadow:0 1px 2px rgba(0,0,0,.45);
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.55}
+a{color:var(--accent);text-underline-offset:2px}
+button{font:inherit;color:inherit}
+p{margin:0}
+h1,h2,h3,h4{text-wrap:balance}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:780px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+.mono-l,.eyebrow,.b-label,.lbl,.r-sname,.fig-l{font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+
+/* hero */
+.hero{padding-block:28px 22px}
+.eyebrow{margin-bottom:12px}
+.hero h1{font-family:var(--font-display);font-weight:900;text-transform:uppercase;font-size:clamp(52px,13vw,104px);line-height:.86;letter-spacing:.005em;margin:0}
+.hero h1 span{display:block}
+.hero h1 .accent{color:var(--accent)}
+.lede{font-size:18px;color:var(--ink-2);max-width:54ch;margin-top:16px}
+.facts{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:16px 0 0;padding:0}
+.facts li{font-family:var(--font-mono);font-size:12.5px;padding:5px 10px;border:1px solid var(--rule);border-radius:999px;color:var(--ink-2);background:var(--surface)}
+.save{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--muted);margin-top:14px}
+.save::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--p-edge);flex:none}
+.save[data-mode="account"]::before{background:var(--good)}
+.save[data-mode="warn"]::before{background:var(--p-build)}
+
+/* tabs */
+.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--rule)}
+.tabs-in{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+.tabs-in::-webkit-scrollbar{display:none}
+.tab{appearance:none;border:0;background:none;padding:13px 12px 10px;font-family:var(--font-display);font-weight:800;font-size:20px;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);border-bottom:3px solid transparent;cursor:pointer;white-space:nowrap}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+.panel{padding-bottom:48px}
+
+/* week bar */
+.weekbar{padding-top:20px}
+.week-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.step{width:42px;height:42px;border-radius:50%;border:1px solid var(--rule);background:var(--surface);font-size:22px;line-height:1;cursor:pointer;display:grid;place-items:center;padding:0}
+.step:hover:not(:disabled){border-color:var(--ink-2)}
+.step:disabled{opacity:.35;cursor:default}
+.wk-num{font-family:var(--font-display);font-weight:900;font-size:52px;line-height:1;min-width:1.3ch;text-align:center}
+.of{color:var(--muted)}
+.phase-name{margin-left:auto;text-align:right}
+.phase-name b{display:block;font-family:var(--font-display);font-weight:800;font-size:24px;line-height:1;text-transform:uppercase;letter-spacing:.02em}
+.wk-track{display:flex;gap:10px;margin-top:14px}
+.wk-phase{flex:1;min-width:0}
+.wk-segs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:3px}
+.wk-seg{position:relative;height:32px;border:0;border-radius:5px;background:var(--sunken);font-family:var(--font-mono);font-size:11px;color:var(--muted);cursor:pointer;padding:0}
+.wk-seg.light{background-image:repeating-linear-gradient(135deg,transparent 0 4px,var(--rule) 4px 6px)}
+.wk-seg.past{color:var(--ink-2);box-shadow:inset 0 -3px 0 var(--ink-2)}
+.wk-seg.now{background:var(--accent);background-image:none;color:var(--on-accent);font-weight:700}
+.wk-seg.test::after{content:"";position:absolute;top:4px;right:4px;width:5px;height:5px;border-radius:50%;background:currentColor}
+.wk-pl{margin-top:5px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wk-legend{margin-top:8px;font-size:13px;color:var(--muted)}
+.phase-desc{margin-top:10px;color:var(--ink-2);max-width:62ch}
+
+/* day strip */
+.days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;margin-top:20px}
+.day{appearance:none;border:1px solid var(--rule);background:var(--surface);border-radius:10px;padding:8px 2px 8px;display:flex;flex-direction:column;align-items:center;gap:1px;cursor:pointer;min-width:0}
+.day:hover{border-color:var(--ink-2)}
+.day .d{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:3px}
+.day .n{font-family:var(--font-display);font-weight:800;font-size:clamp(13px,3.6vw,18px);text-transform:uppercase;line-height:1.1;letter-spacing:.01em;white-space:nowrap}
+.day .c{display:block;width:70%;height:3px;border-radius:2px;background:var(--sunken);overflow:hidden;margin-top:5px}
+.day .c i{display:block;height:100%;width:0;background:var(--accent)}
+.day.rest .n{color:var(--muted)}
+.day.today .d::after{content:"";width:5px;height:5px;border-radius:50%;background:var(--p-power)}
+.day[aria-selected="true"]{background:var(--ink);border-color:var(--ink)}
+.day[aria-selected="true"] .d,.day[aria-selected="true"] .n{color:var(--bg)}
+.day[aria-selected="true"] .c{background:color-mix(in srgb,var(--bg) 25%,transparent)}
+.day[aria-selected="true"] .c i{background:var(--bg)}
+.key{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;color:var(--muted);margin:12px 0 0;padding:0;list-style:none}
+.key li{display:flex;align-items:center;gap:6px}
+.hint{font-size:13.5px;color:var(--muted);margin-top:6px}
+
+/* plates */
+.plate{--c:var(--p-edge);flex:none;width:20px;height:20px;border-radius:50%;background:var(--c);position:relative;display:inline-block}
+.plate::after{content:"";position:absolute;inset:7px;border-radius:50%;background:var(--surface)}
+.key .plate{width:14px;height:14px}
+.key .plate::after{inset:5px;background:var(--bg)}
+[data-type="power"] .plate,.plate.power{--c:var(--p-power)}
+[data-type="strength"] .plate,.plate.strength{--c:var(--p-strength)}
+[data-type="build"] .plate,.plate.build{--c:var(--p-build)}
+[data-type="engine"] .plate,.plate.engine{--c:var(--p-engine)}
+[data-type="ground"] .plate,.plate.ground{background:var(--p-ground);box-shadow:inset 0 0 0 2px var(--p-edge)}
+
+/* session */
+.s-head{padding-top:22px}
+.s-kicker{display:flex;gap:8px;flex-wrap:wrap}
+.s-name{font-family:var(--font-display);font-weight:900;font-size:clamp(56px,15vw,96px);line-height:.85;text-transform:uppercase;margin:6px 0 8px}
+.s-focus{font-size:18px;font-weight:700}
+.s-why{color:var(--ink-2);margin-top:6px;max-width:62ch}
+.s-note{margin-top:10px;font-size:15px;color:var(--ink-2);max-width:62ch;padding-left:12px;border-left:3px solid var(--rule)}
+.s-prog{display:flex;align-items:center;gap:10px;margin-top:16px;font-size:14px;color:var(--muted)}
+.s-prog .bar{flex:1;max-width:280px;height:6px;border-radius:3px;background:var(--sunken);overflow:hidden}
+.s-prog .bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .25s}
+.notice{margin-top:16px;border-radius:var(--radius);padding:14px 16px;background:var(--flag-wash);border:1px solid var(--rule)}
+.notice h4{margin:0 0 4px;font-family:var(--font-display);font-weight:800;font-size:21px;text-transform:uppercase;letter-spacing:.02em;color:var(--ink)}
+.notice p{color:var(--ink-2);font-size:15px}
+.t-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:12px}
+.t-list label{display:block;font-size:13px;color:var(--ink-2);margin-bottom:4px;line-height:1.3}
+
+/* blocks */
+.block{background:var(--surface);border:1px solid var(--rule);border-radius:var(--radius);margin-top:14px;box-shadow:var(--shadow);overflow:hidden}
+.b-head{display:flex;gap:12px;align-items:flex-start;padding:14px 16px 12px}
+.b-head .plate{margin-top:2px}
+.b-txt{min-width:0}
+.b-title{font-family:var(--font-display);font-weight:800;font-size:25px;line-height:1.02;text-transform:uppercase;letter-spacing:.015em;margin:3px 0 0}
+.b-note{font-size:14.5px;color:var(--ink-2);margin-top:5px}
+.items{list-style:none;margin:0;padding:0}
+.item{display:flex;gap:2px;border-top:1px solid var(--rule);padding:10px 16px 14px 6px}
+.i-body{flex:1;min-width:0}
+.i-name{font-weight:700;font-size:17px;line-height:1.3;padding-top:10px}
+.pair{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--muted);margin-right:6px}
+.tag{display:inline-block;font-family:var(--font-mono);font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border:1px solid currentColor;border-radius:4px;padding:0 5px;margin-left:8px;vertical-align:2px}
+.rx{font-family:var(--font-display);font-weight:800;font-size:26px;line-height:1.1;margin-top:4px;letter-spacing:.01em}
+.lighter{display:inline-block;font-family:var(--font-mono);font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--flag);background:var(--flag-wash);border-radius:4px;padding:1px 6px;margin-left:8px;vertical-align:5px}
+.i-meta{font-size:14.5px;color:var(--ink-2);margin-top:2px}
+.item.is-done .i-name,.item.is-done .rx{color:var(--muted)}
+.i-tools{display:flex;gap:8px;margin-top:10px;align-items:center}
+.log,.inp{height:42px;border:1px solid var(--rule);border-radius:8px;background:var(--bg);color:var(--ink);padding:0 12px;font-family:var(--font-mono);font-size:14.5px;width:100%;min-width:0}
+.log{flex:1}
+.log::placeholder,.inp::placeholder{color:var(--muted);opacity:.85}
+.log:focus,.inp:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px var(--accent-wash)}
+.how{flex:none;height:42px;padding:0 14px;border:1px solid var(--rule);border-radius:8px;background:var(--surface);cursor:pointer;font-size:14px;font-weight:700;white-space:nowrap}
+.how:hover{border-color:var(--ink-2)}
+.how[aria-expanded="true"]{background:var(--sunken)}
+.i-how{margin-top:10px;padding:12px 14px;border-radius:8px;background:var(--bg);font-size:15px}
+.cues{margin:0;padding-left:18px}
+.cues li+li{margin-top:5px}
+.why{margin-top:10px;color:var(--ink-2)}
+.swap{margin-top:8px;color:var(--ink-2)}
+.watch{display:inline-block;margin-top:10px;font-weight:700}
+.watch::after{content:" \2197"}
+
+/* check control */
+.check{position:relative;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;flex:none;cursor:pointer}
+.check input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer;width:100%;height:100%}
+.check .box{width:26px;height:26px;border-radius:50%;border:2px solid var(--p-edge);background:var(--surface);display:grid;place-items:center;transition:background-color .15s,border-color .15s}
+.check input:checked+.box{background:var(--ink);border-color:var(--ink)}
+.check input:checked+.box::after{content:"";width:11px;height:6px;border-left:2.5px solid var(--bg);border-bottom:2.5px solid var(--bg);transform:translateY(-1px) rotate(-45deg)}
+.check input:focus-visible+.box{outline:2px solid var(--accent);outline-offset:3px}
+.check:hover .box{border-color:var(--ink-2)}
+
+/* routines */
+.r-details{border-top:1px solid var(--rule)}
+.r-details summary{list-style:none;cursor:pointer;padding:12px 16px;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.r-details summary::-webkit-details-marker{display:none}
+.r-details summary::after{content:"";width:8px;height:8px;border-right:2px solid var(--ink-2);border-bottom:2px solid var(--ink-2);transform:rotate(45deg);margin-right:4px;flex:none}
+.r-details[open] summary::after{transform:rotate(-135deg)}
+.r-details[open] .when-closed,.r-details:not([open]) .when-open{display:none}
+.r-sum{font-weight:400;color:var(--muted);font-size:13.5px;display:block}
+.r-body{display:grid;gap:16px;padding:0 16px 14px}
+.r-sname{display:flex;align-items:center;gap:8px;margin-bottom:2px}
+.r-num{display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;border:1px solid var(--rule);font-size:10.5px;letter-spacing:0;color:var(--ink-2)}
+.r-list{list-style:none;margin:0;padding:0}
+.r-list li{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:7px 0;border-top:1px solid var(--rule)}
+.r-list li:first-child{border-top:0}
+.r-move{font-weight:700;min-width:0}
+.r-cue{display:block;font-weight:400;font-size:14px;color:var(--muted);margin-top:1px}
+.r-dose{font-family:var(--font-mono);font-size:13px;color:var(--ink-2);text-align:right;flex:none;max-width:46%}
+.r-done{display:flex;align-items:center;gap:4px;border-top:1px solid var(--rule);padding:6px 16px 6px 6px;font-weight:700;cursor:pointer}
+
+/* check-in */
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;padding:0 16px 14px}
+.field{min-width:0;border:0;margin:0;padding:0}
+.field label,.field legend{display:block;font-size:13.5px;color:var(--ink-2);margin-bottom:5px;padding:0}
+.field.wide{grid-column:1/-1}
+.seg{display:grid;grid-template-columns:repeat(5,1fr);gap:4px}
+.seg label{position:relative;margin:0}
+.seg input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.seg span{display:grid;place-items:center;height:42px;border:1px solid var(--rule);border-radius:8px;background:var(--bg);font-family:var(--font-mono);font-size:15px;font-weight:700;color:var(--ink-2)}
+.seg input:checked+span{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.seg input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
+.seg-l{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:4px}
+.ci-note{padding:0 16px 16px;font-size:14px;color:var(--muted)}
+
+/* panels: shared */
+.p-head{padding-top:24px}
+.p-title{font-family:var(--font-display);font-weight:900;font-size:clamp(48px,12vw,80px);line-height:.88;text-transform:uppercase;margin:8px 0 10px}
+.p-lede{font-size:17px;color:var(--ink-2);max-width:60ch}
+.sec{margin-top:30px}
+.sec>h3,.sec-h{font-family:var(--font-display);font-weight:800;font-size:28px;line-height:1.05;text-transform:uppercase;letter-spacing:.015em;margin:0 0 10px}
+.sec p+p,.sec p+ul,.sec ul+p,.sec dl+p,.sec div+p{margin-top:10px}
+.sec ul,.sec ol{margin:0;padding-left:20px}
+.sec li+li{margin-top:7px}
+.sub{color:var(--muted);font-size:14.5px;margin-top:-4px;margin-bottom:12px}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
+.cols{display:grid;gap:0 28px}
+@media (min-width:720px){.cols{grid-template-columns:1fr 1fr}}
+
+/* progress */
+.chart{position:relative;margin-top:6px;min-height:120px}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart text{fill:var(--muted);font-family:var(--font-mono);font-size:11px}
+.chart .grid{stroke:var(--rule);stroke-width:1}
+.chart .band{fill:var(--accent);fill-opacity:.12}
+.chart .line{fill:none;stroke:var(--accent);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.chart .dot{fill:var(--accent);stroke:var(--surface);stroke-width:2}
+.chart .end{fill:var(--ink);font-weight:700;font-size:12px}
+.chart .xhair{stroke:var(--ink-2);stroke-width:1}
+.chart .hit{fill:transparent;cursor:crosshair}
+.chart-empty{display:grid;place-items:center;text-align:center;min-height:150px;padding:16px;border:1px dashed var(--rule);border-radius:10px;color:var(--muted);font-size:14.5px}
+.tip{position:absolute;top:0;pointer-events:none;background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:7px 10px;box-shadow:var(--shadow);font-size:13px;line-height:1.35;white-space:nowrap;z-index:2}
+.tip b{display:block;font-size:15px;color:var(--ink)}
+.tip span{display:block;color:var(--muted)}
+.bw-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;margin-top:14px}
+@media (min-width:720px){.bw-grid{grid-template-columns:repeat(12,minmax(0,1fr))}}
+.bw-cell label{display:block;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:3px;text-align:center}
+.bw-cell.now label{color:var(--accent);font-weight:700}
+.bw-cell .inp{text-align:center;padding:0 4px;font-size:14px}
+.bench{display:grid;gap:10px}
+@media (min-width:720px){.bench{grid-template-columns:1fr 1fr}}
+.b-card{background:var(--surface);border:1px solid var(--rule);border-radius:var(--radius);padding:14px}
+.b-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.b-top h4{margin:0;font-size:16.5px}
+.unit{font-family:var(--font-mono);font-size:11.5px;color:var(--muted);white-space:nowrap}
+.b-how{font-size:13.5px;color:var(--muted);margin-top:4px}
+.b-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:10px}
+.b-row label{display:block;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:3px;text-align:center}
+.b-row .inp{text-align:center;padding:0 4px}
+.delta{margin-top:8px;font-family:var(--font-mono);font-size:13px;font-weight:700;color:var(--muted);min-height:1.4em}
+.delta.good{color:var(--good)}
+.delta.bad{color:var(--bad)}
+.sk-count{font-family:var(--font-display);font-weight:800;font-size:22px}
+.sk-group{margin-top:16px}
+.sk-group h4{margin:0;font-size:17px}
+.sk-list{list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:1fr;gap:0 18px}
+@media (min-width:720px){.sk-list{grid-template-columns:1fr 1fr}}
+.sk{display:flex;align-items:center;gap:4px;border-top:1px solid var(--rule);padding:2px 0;cursor:pointer}
+.sk .check{width:40px;height:40px}
+.sk .check .box{width:22px;height:22px}
+
+/* fuel + guide */
+.figs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:20px}
+@media (min-width:720px){.figs{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.fig{background:var(--surface);border:1px solid var(--rule);border-radius:var(--radius);padding:14px}
+.fig b{display:block;font-size:24px;line-height:1.15;margin-top:4px}
+.fig-s{display:block;font-size:13.5px;color:var(--muted)}
+.defs{margin:0;display:grid;gap:10px}
+.defs>div{display:grid;grid-template-columns:110px 1fr;gap:12px;padding-top:10px;border-top:1px solid var(--rule)}
+.defs dt{font-weight:700}
+.defs dd{margin:0;color:var(--ink-2)}
+@media (max-width:480px){.defs>div{grid-template-columns:1fr;gap:2px}}
+.meals{list-style:none;margin:0;padding:0}
+.meals li{display:grid;grid-template-columns:1fr auto;gap:2px 14px;padding:10px 0;border-top:1px solid var(--rule)}
+.meals li+li{margin-top:0}
+.meals b{grid-column:1}
+.meals .m-what{grid-column:1;color:var(--ink-2);font-size:15px}
+.meals .m-num{grid-column:2;grid-row:1/span 2;font-family:var(--font-mono);font-size:13px;color:var(--ink-2);text-align:right;align-self:center;font-variant-numeric:tabular-nums}
+.meals .total{font-weight:700;color:var(--ink)}
+.recipe{margin-top:4px}
+.phases{display:grid;gap:10px}
+@media (min-width:640px){.phases{grid-template-columns:repeat(3,1fr)}}
+.ph b{display:block;font-family:var(--font-display);font-weight:800;font-size:24px;text-transform:uppercase;line-height:1.05;margin-top:2px}
+.ph p{font-size:14.5px;color:var(--ink-2);margin-top:4px}
+.vs{display:grid;gap:10px}
+@media (min-width:640px){.vs{grid-template-columns:1fr 1fr}}
+.vs b{display:block;margin-bottom:4px}
+.vs p{font-size:15px;color:var(--ink-2)}
+.flags .card{border-color:var(--p-power);border-width:1px 1px 1px 4px}
+.timeline{list-style:none;padding:0!important}
+.timeline li{display:grid;grid-template-columns:100px 1fr;gap:12px;padding-top:10px;border-top:1px solid var(--rule)}
+.timeline span{font-family:var(--font-mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+@media (max-width:480px){.timeline li{grid-template-columns:1fr;gap:2px}}
+
+/* ask */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{appearance:none;border:1px solid var(--rule);background:var(--surface);border-radius:999px;padding:8px 14px;font-size:14.5px;cursor:pointer}
+.chip:hover{border-color:var(--ink-2)}
+.ask-box{width:100%;margin-top:14px;min-height:96px;resize:vertical;border:1px solid var(--rule);border-radius:10px;background:var(--surface);color:var(--ink);padding:12px 14px;font:inherit;font-size:16px}
+.ask-box:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px var(--accent-wash)}
+.ask-row{display:flex;align-items:center;gap:10px;margin-top:10px;flex-wrap:wrap}
+.btn{appearance:none;border:0;border-radius:10px;height:44px;padding:0 20px;background:var(--accent);color:var(--on-accent);font-weight:700;font-size:15px;cursor:pointer}
+.btn:disabled{opacity:.5;cursor:default}
+.btn.ghost{background:var(--surface);color:var(--ink);border:1px solid var(--rule)}
+.ask-msg{font-size:14px;color:var(--muted)}
+.ask-out{margin-top:16px;white-space:pre-wrap;font-size:16px;line-height:1.6}
+.bk-box{min-height:64px;margin-top:10px;font-family:var(--font-mono);font-size:13px;word-break:break-all}
+.bk-l{display:block;font-size:14px;font-weight:700;margin-top:18px}
+.bk-confirm{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:14px;color:var(--ink-2)}
+
+/* phones: a compact header so today's session is close to the top */
+@media (max-width:560px){
+  .hero{padding-block:16px 12px}
+  .eyebrow{margin-bottom:8px}
+  .hero h1{font-size:44px}
+  .lede{display:none}
+  .facts{margin-top:10px;gap:5px}
+  .facts li{font-size:11.5px;padding:4px 8px}
+  .save{margin-top:10px;font-size:12.5px}
+  .tab{font-size:18px;padding:12px 10px 9px}
+  .weekbar{padding-top:14px}
+  .wk-num{font-size:44px}
+  .step{width:38px;height:38px}
+  .phase-name b{font-size:20px}
+  .wk-legend{font-size:12px}
+  .phase-desc{font-size:15px}
+  .days{margin-top:14px}
+  .hint{display:none}
+  .s-head{padding-top:16px}
+  .b-head{padding:12px 14px 10px}
+  .item{padding:8px 14px 12px 4px}
+  .log,.inp,.bk-box{font-size:16px}
+}
+.foot{border-top:1px solid var(--rule);padding-block:20px 32px;font-size:13.5px;color:var(--muted)}
+.foot p{max-width:70ch}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+</style>
+
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Training plan · 12 weeks · 3 phases</p>
+    <h1><span class="accent">12-Week</span><span>Athlete Build</span></h1>
+    <p class="lede">Get faster, move freely again, protect your back, last longer in games, and build an athletic frame to match.</p>
+    <ul class="facts" aria-label="Built for">
+      <li>Mon · Wed · Fri · Sat · Sun</li><li>~45–50 min sessions</li>
+    </ul>
+    <p class="save" id="save-status" data-mode="local" role="status">Saved on this device</p>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Sections">
+  <div class="wrap tabs-in" role="tablist">
+    <button class="tab" role="tab" id="tab-plan" data-tab="plan" aria-controls="panel-plan" aria-selected="true">Plan</button>
+    <button class="tab" role="tab" id="tab-progress" data-tab="progress" aria-controls="panel-progress" aria-selected="false">Progress</button>
+    <button class="tab" role="tab" id="tab-fuel" data-tab="fuel" aria-controls="panel-fuel" aria-selected="false">Fuel</button>
+    <button class="tab" role="tab" id="tab-guide" data-tab="guide" aria-controls="panel-guide" aria-selected="false">Guide</button>
+  </div>
+</nav>
+
+<main>
+<section class="panel" id="panel-plan" role="tabpanel" aria-labelledby="tab-plan">
+  <div class="wrap">
+    <div class="weekbar">
+      <div class="week-row">
+        <span class="lbl">Week</span>
+        <button class="step" id="wk-prev" type="button" aria-label="Previous week">&#8249;</button>
+        <output class="wk-num" id="wk-num" aria-live="polite">1</output>
+        <button class="step" id="wk-next" type="button" aria-label="Next week">&#8250;</button>
+        <span class="of">of 12</span>
+        <div class="phase-name"><span class="lbl" id="phase-num">Phase 1</span><b id="phase-name">Foundation</b></div>
+      </div>
+      <div class="wk-track" id="wk-track"></div>
+      <p class="wk-legend">Striped = lighter week · dot = test week · tap any week to jump to it</p>
+      <p class="phase-desc" id="phase-desc"></p>
+    </div>
+    <div class="days" id="days" role="tablist" aria-label="Day of the week"></div>
+    <ul class="key" aria-label="Block colours">
+      <li><span class="plate power"></span>Speed &amp; power</li>
+      <li><span class="plate strength"></span>Strength</li>
+      <li><span class="plate build"></span>Muscle</li>
+      <li><span class="plate engine"></span>Engine</li>
+      <li><span class="plate ground"></span>Ground &amp; armor</li>
+    </ul>
+    <p class="hint">Tick things off as you go and log your weights. Tap “How to” on any exercise for cues, swaps and form videos.</p>
+    <article id="session" aria-live="off"></article>
+  </div>
+</section>
+
+<section class="panel" id="panel-progress" role="tabpanel" aria-labelledby="tab-progress" hidden>
+  <div class="wrap">
+    <div class="p-head">
+      <p class="eyebrow">Progress</p>
+      <h2 class="p-title">Track it</h2>
+      <p class="p-lede">Numbers keep you honest. Bodyweight every week, benchmarks in weeks 1, 4, 8 and 12, and skills whenever you nail them.</p>
+    </div>
+
+    <section class="sec">
+      <h3>Bodyweight</h3>
+      <p class="sub">Target: gain 0.25–0.5 kg a week (the shaded band starts from your first entry). Log the average of 2–3 morning weigh-ins.</p>
+      <div class="card">
+        <div class="chart" id="bw-chart"></div>
+        <div class="bw-grid" id="bw-grid"></div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <h3>Benchmarks</h3>
+      <p class="sub">Test fresh, after a full warm-up. The Plan tab tells you which tests to do on which day in test weeks.</p>
+      <div class="bench" id="bench"></div>
+    </section>
+
+    <section class="sec">
+      <h3>Skill unlocks <span class="sk-count" id="sk-count"></span></h3>
+      <p class="sub">Childhood movement first, then athlete skills. Practise one on Sundays.</p>
+      <div id="skills"></div>
+    </section>
+
+    <section class="sec">
+      <h3>Back up your log</h3>
+      <p class="sub">Your log lives only in this browser. Copy a backup every week or two and keep it in your Notes app. The same code moves your log to another phone or browser. On iPhone, the home-screen icon and Safari keep separate logs, so always open the plan the same way.</p>
+      <div class="card">
+        <div class="ask-row">
+          <button class="btn" id="bk-copy" type="button">Copy backup</button>
+          <span class="ask-msg" id="bk-msg" role="status"></span>
+        </div>
+        <label class="sr" for="bk-out">Backup code</label>
+        <textarea class="ask-box bk-box" id="bk-out" readonly hidden></textarea>
+        <label class="bk-l" for="bk-text">Restore from a backup</label>
+        <textarea class="ask-box bk-box" id="bk-text" placeholder="Paste a backup code here (it starts with AB1:)"></textarea>
+        <div class="ask-row">
+          <button class="btn ghost" id="bk-restore" type="button">Restore log</button>
+          <span class="bk-confirm" id="bk-confirm" hidden><span>Replace everything logged here?</span><button class="btn" id="bk-yes" type="button">Yes, replace</button><button class="btn ghost" id="bk-no" type="button">Cancel</button></span>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+
+
+<section class="panel" id="panel-fuel" role="tabpanel" aria-labelledby="tab-fuel" hidden>
+  <div class="wrap">
+    <div class="p-head">
+      <p class="eyebrow">Fuel &amp; recovery</p>
+      <h2 class="p-title">Eat to grow</h2>
+      <p class="p-lede">Tall, lean and training five days a week plus sport, you burn a lot. Most lean teens who think they “can’t gain” simply aren’t eating enough. The gym gives the signal; food and sleep build the muscle.</p>
+    </div>
+
+    <div class="figs">
+      <div class="fig"><span class="fig-l">Gain rate</span><b>+0.25–0.5 kg</b><span class="fig-s">per week</span></div>
+      <div class="fig"><span class="fig-l">Energy</span><b>≈3,200–3,800</b><span class="fig-s">kcal a day, roughly</span></div>
+      <div class="fig"><span class="fig-l">Protein</span><b>110–130 g</b><span class="fig-s">a day, over 4–5 meals</span></div>
+      <div class="fig"><span class="fig-l">Sleep</span><b>8–10 h</b><span class="fig-s">every night</span></div>
+    </div>
+
+    <div class="cols">
+      <section class="sec">
+        <h3>Use the scale, not a calculator</h3>
+        <p>You don’t need to count calories. Weigh yourself 2–3 mornings a week, after the bathroom and before eating, and log the average on Sunday.</p>
+        <ul>
+          <li><b>Flat for 2 weeks:</b> add 300–500 kcal a day. A glass of whole milk and a peanut-butter sandwich does it.</li>
+          <li><b>Up 0.25–0.5 kg a week:</b> perfect. Keep going.</li>
+          <li><b>Up more than 0.5 kg a week for a month:</b> trim the extras a little.</li>
+        </ul>
+      </section>
+      <section class="sec">
+        <h3>Build every meal the same way</h3>
+        <dl class="defs">
+          <div><dt>Protein</dt><dd>A palm or two: eggs, chicken, fish, beef, Greek yogurt, milk, paneer or cottage cheese, tofu, lentils, beans.</dd></div>
+          <div><dt>Carbs</dt><dd>One or two fists: rice, potatoes, pasta, bread, wraps or roti, oats, fruit. Your fuel for training and sport.</dd></div>
+          <div><dt>Fats</dt><dd>A thumb or two: olive oil, nuts, peanut butter, cheese, avocado. The easiest extra calories.</dd></div>
+          <div><dt>Colour</dt><dd>Fruit or veg at most meals.</dd></div>
+        </dl>
+      </section>
+    </div>
+
+    <section class="sec">
+      <h3>A day that works</h3>
+      <p class="sub">About 3,500 kcal and 150 g protein. Swap in foods you like; keep the pattern.</p>
+      <ul class="meals">
+        <li><b>Breakfast</b><span class="m-what">3 eggs, 2 slices of toast with butter, a banana, 250 ml milk</span><span class="m-num">700 kcal<br>35 g</span></li>
+        <li><b>Morning snack</b><span class="m-what">Peanut-butter and banana sandwich, a handful of nuts</span><span class="m-num">600 kcal<br>15 g</span></li>
+        <li><b>Lunch</b><span class="m-what">Big plate of rice or pasta, chicken, fish, paneer or lentils, veg, a drizzle of olive oil</span><span class="m-num">800 kcal<br>35 g</span></li>
+        <li><b>1–2 h before training</b><span class="m-what">Greek yogurt with granola and honey</span><span class="m-num">400 kcal<br>20 g</span></li>
+        <li><b>Dinner</b><span class="m-what">Potatoes or rice, meat, fish, tofu or beans, veg, some cheese</span><span class="m-num">750 kcal<br>35 g</span></li>
+        <li><b>Before bed</b><span class="m-what">300 ml milk, or half the power shake below</span><span class="m-num">250–500 kcal<br>10–25 g</span></li>
+        <li class="total"><b>Total</b><span class="m-what">Spread across 6 eating times</span><span class="m-num">≈3,500 kcal<br>≈150 g</span></li>
+      </ul>
+    </section>
+
+    <div class="cols">
+      <section class="sec">
+        <h3>Power shake</h3>
+        <p class="sub">≈1,000 kcal, ≈45 g protein. Blend, then drink half after training and half before bed.</p>
+        <ul class="recipe">
+          <li>500 ml whole milk</li>
+          <li>1 banana</li>
+          <li>60 g oats</li>
+          <li>2 tbsp peanut butter</li>
+          <li>150 g Greek yogurt</li>
+          <li>1 tbsp honey</li>
+        </ul>
+      </section>
+      <section class="sec">
+        <h3>Timing and drinks</h3>
+        <ul>
+          <li>Eat 1–3 hours before training: carbs plus a little protein. Never train on empty after school; keep a snack in your bag.</li>
+          <li>Have a proper meal within about 2 hours after.</li>
+          <li>Drink enough that your pee is pale yellow. More on hot days and sport days. Milk counts.</li>
+          <li>Your bones are still building: get calcium daily (milk, yogurt, cheese or fortified alternatives) and some daylight for vitamin D.</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="sec">
+      <h3>Supplements</h3>
+      <ul>
+        <li><b>You don’t need any.</b> Food first, always.</li>
+        <li><b>Protein powder</b> is just convenient food. Fine if it helps you hit your protein.</li>
+        <li><b>Creatine</b> is well studied in adults, but most youth sports-medicine groups advise waiting until 18 unless a doctor says otherwise.</li>
+        <li><b>Skip</b> pre-workouts and energy drinks (lots of caffeine), fat burners and “test boosters”.</li>
+        <li><b>Never touch steroids or SARMs.</b> At 15 they can shut down your own hormone production and stop you growing taller. Your natural hormones are about to do this job for free.</li>
+      </ul>
+    </section>
+
+    <section class="sec">
+      <h3>Sleep is training</h3>
+      <ul>
+        <li><b>8–10 hours.</b> Teens need more sleep than adults, and deep sleep is when most growth and muscle repair happens.</li>
+        <li>Same bedtime and wake time every day, within about an hour at weekends.</li>
+        <li>Phone out of bed 30–60 minutes before sleep. Cool, dark room.</li>
+        <li>No caffeine after about 2 pm. A 20–30 minute nap is fine.</li>
+        <li>Teen athletes who sleep under 8 hours get injured noticeably more often. Sleep is part of the plan, not a break from it.</li>
+      </ul>
+    </section>
+  </div>
+</section>
+
+
+<section class="panel" id="panel-guide" role="tabpanel" aria-labelledby="tab-guide" hidden>
+  <div class="wrap">
+    <div class="p-head">
+      <p class="eyebrow">Guide</p>
+      <h2 class="p-title">How it works</h2>
+      <p class="p-lede">Why you feel the way you do, how to run the plan, and how to keep your back healthy for life.</p>
+    </div>
+
+    <section class="sec">
+      <h3>Why you don’t feel athletic yet</h3>
+      <ul>
+        <li><b>You grew faster than your coordination.</b> Bones grow first. Muscles, tendons and your brain’s map of your body catch up later, so tall teens often feel clumsy for a while. Sprinting, jumping and crawling practice speeds up the catch-up.</li>
+        <li><b>Long levers, not much muscle yet.</b> If you’re tall and lean, you have long arms and legs and not much muscle moving them yet. Every sprint, jump and pull-up costs you more than it costs a shorter, heavier friend. Getting stronger and gaining muscle changes this more than anything else.</li>
+        <li><b>You stopped playing on the floor.</b> Kids crawl, climb, roll and squat all day. Teens mostly sit. Movement is a skill you keep by using it. The Ground Game warm-ups and Sunday’s flow bring it back.</li>
+        <li><b>Sport isn’t endurance training.</b> Most team sports are stop-start. Without easy aerobic work your base stays small, so you gas early. Under-eating makes it worse.</li>
+      </ul>
+    </section>
+
+    <section class="sec">
+      <h3>The 12 weeks</h3>
+      <div class="phases">
+        <div class="card ph"><span class="mono-l">Weeks 1–4</span><b>Foundation</b><p>Learn the lifts and own the positions. Slow lowering, sprints at 85–90%.</p></div>
+        <div class="card ph"><span class="mono-l">Weeks 5–8</span><b>Build</b><p>Heavier, more sets, all-out sprints. Size and strength start to move.</p></div>
+        <div class="card ph"><span class="mono-l">Weeks 9–12</span><b>Athlete</b><p>Heaviest lifts, jumps paired with heavy sets, flying sprints. Then retest.</p></div>
+      </div>
+      <p>Weeks 4 and 8 are lighter: about half the sets and 10% less weight, so your body can catch up. Week 12 is light too, with retesting. Tests happen in weeks 1, 4, 8 and 12.</p>
+    </section>
+
+    <section class="sec">
+      <h3>Rules for every session</h3>
+      <dl class="defs">
+        <div><dt>Effort</dt><dd><b>RIR</b> means reps in reserve: RIR 2 = stop with 2 good reps left. Never grind ugly reps on the main lifts, and skip 1-rep-max testing. You don’t need it.</dd></div>
+        <div><dt>Order</dt><dd>Warm-up, speed and power, main lift, supersets, core, cardio. Fast work goes first because it’s useless when you’re tired.</dd></div>
+        <div><dt>Rest</dt><dd>Sprints and jumps: full rest. Main lifts: 2–3 min. Supersets: 60–90 s between exercises.</dd></div>
+        <div><dt>Progress</dt><dd>Main lifts: when every set hits the target at RIR 2 or more, add 2.5–5 kg to leg lifts or 1–2.5 kg to upper-body lifts the next week. Rep ranges like 8–12: add reps until every set hits the top, then add weight and start again at the bottom.</dd></div>
+        <div><dt>Form</dt><dd>Film your main lifts from the side and compare with the cues. Ask a PE teacher, school strength coach or qualified trainer to check your deadlift and squat early on.</dd></div>
+        <div><dt>Short on time</dt><dd>Keep the warm-up, the power work, the main lift and Superset A. Drop the rest.</dd></div>
+        <div><dt>Missed a day</dt><dd>Don’t double up. Do the next session, or slide the missed one to your next free day.</dd></div>
+        <div><dt>Colours</dt><dd>Block colours follow competition weight plates: red 25 kg for speed and power, blue 20 for strength, yellow 15 for muscle, green 10 for engine, white 5 for ground work and back armor.</dd></div>
+      </dl>
+    </section>
+
+    <section class="sec">
+      <h3>Back armor: future-proofing your spine</h3>
+      <p>Your spine isn’t fragile. It gets stronger with gradual, well-done loading, like the rest of you, and regular exercise is the best-proven way to prevent back pain. If back problems run in your family, these habits matter even more:</p>
+      <ul>
+        <li><b>Trunk endurance.</b> The McGill Big 3 (curl-up, side plank, bird dog) most days. For backs, endurance matters more than max strength.</li>
+        <li><b>Hinge with your hips.</b> Trap-bar deadlifts and RDLs teach your hips to do the work while your spine stays neutral.</li>
+        <li><b>Strong glutes and hamstrings</b> take load off your lower back.</li>
+        <li><b>Mobile hips and upper back,</b> so your lower back doesn’t bend to make up for them.</li>
+        <li><b>Resist movement.</b> Pallof presses resist twisting, dead bugs and rollouts resist arching, carries and side planks resist leaning.</li>
+        <li><b>No ego lifting,</b> and no heavy rounded-back lifting when you’re tired.</li>
+        <li><b>Keep it even.</b> Left and right side planks within about 10% of each other.</li>
+        <li><b>Move often.</b> No single posture is bad; staying in one for hours is. Get up every 30–45 minutes.</li>
+      </ul>
+    </section>
+
+    <section class="sec">
+      <h3>Looking athletic</h3>
+      <ul>
+        <li><b>Shoulders and back first.</b> Lateral raises, pull-ups, rows and face pulls widen your shoulders and make your waist look smaller.</li>
+        <li><b>Upper chest and arms</b> fill out a T-shirt.</li>
+        <li><b>Legs and glutes.</b> Every athlete has them, and they drive your speed.</li>
+        <li><b>Own your height.</b> Tall teens often slouch. A strong upper back and standing tall make you look bigger instantly.</li>
+        <li><b>Gain slowly.</b> 0.25–0.5 kg a week keeps the gain mostly muscle.</li>
+      </ul>
+      <p>You won’t end up looking like a bodybuilder. You train for speed and power too, with athletic movements and moderate volume, which builds muscle that works.</p>
+    </section>
+
+    <section class="sec">
+      <h3>Sport and game days</h3>
+      <ul>
+        <li>Sport comes first when it clashes with the gym.</li>
+        <li>Day before a match: no heavy legs or sprints. Do an upper session or just Daily Armor.</li>
+        <li>Day after a hard match: do Sunday’s session instead.</li>
+        <li>Keep heavy leg days at least 48 hours before games.</li>
+        <li>Busy season with 2+ games a week: drop Saturday’s intervals and Sunday’s long cardio (your sport covers it), and do about two-thirds of the sets on Monday, Wednesday and Friday.</li>
+        <li>Practice and gym on the same day: lift after practice, or leave a few hours between.</li>
+      </ul>
+      <p><b>Doing too much?</b> Sore for 3+ days, sleeping badly, getting slower or weaker, no appetite, short-tempered. Take 2–3 easy days, or run a lighter week early.</p>
+    </section>
+
+    <section class="sec">
+      <h3>Soreness or pain?</h3>
+      <div class="vs">
+        <div class="card"><b>Soreness: normal</b><p>A dull ache in the muscle, usually on both sides, that fades in 1–3 days. Warm up well and train.</p></div>
+        <div class="card"><b>Pain: stop that exercise</b><p>Sharp, in a joint or bone, on one side, getting worse, or changing how you move. Use the swap, and get it checked if it lasts more than a week.</p></div>
+      </div>
+    </section>
+
+    <section class="sec flags">
+      <h3>See a doctor or physio if</h3>
+      <div class="card">
+        <ul>
+          <li>Lower-back pain lasts more than 2 weeks, especially if leaning backward hurts. Stress fractures in the lower back (spondylolysis) are common in teen athletes and need rest, not training through.</li>
+          <li>Back pain comes with numbness, tingling or weakness in a leg, or wakes you at night.</li>
+          <li>You get pain just below the kneecap or at the back of the heel during a growth spurt. Growth-plate irritation (Osgood-Schlatter, Sever’s) needs less jumping for a while.</li>
+          <li>You wheeze, cough or get a tight chest during or after exercise. Exercise-induced asthma is common, very treatable, and could be part of why you gas out.</li>
+          <li>You feel wiped out all the time despite eating and sleeping well.</li>
+        </ul>
+        <p>If back problems run in your family, it’s also worth asking your doctor for a quick spine check at your next visit.</p>
+      </div>
+    </section>
+
+    <section class="sec">
+      <h3>What to expect</h3>
+      <ol class="timeline">
+        <li><span>Weeks 1–4</span><p>Moving feels smoother and less stiff. Strength climbs fast as your nervous system learns the lifts. Easy cardio stops feeling awful.</p></li>
+        <li><span>Weeks 5–8</span><p>Shoulders, back and arms start to look different if you’re eating enough. Sprint and jump numbers move. Games feel easier.</p></li>
+        <li><span>Weeks 9–12</span><p>About 3–5 kg heavier, clearly stronger, quicker off the mark. Retest and compare with week 1.</p></li>
+        <li><span>After that</span><p>Run the 12 weeks again with heavier weights, or progress the lifts: goblet to front or back squat, trap bar to straight-bar deadlift (coached), landmine to standing overhead press. Keep the warm-ups, Sundays and Daily Armor for good. The big changes come from stacking blocks like this for a year or two, and the next few years are your best window for building muscle.</p></li>
+      </ol>
+    </section>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>General training guidance, not medical advice. If you have pain, an injury or a medical condition, get checked first, ideally by a physio or sports doctor who works with young athletes. Let a parent or coach know what you’re doing.</p>
+  </div>
+</footer>
+
+<script>
+(() => {
+"use strict";
+/* ---------- plan content ---------- */
+const PHASES = {
+  1: { name: "Foundation", desc: "Learn the lifts and own the positions. Moderate weights, slow lowering, sprints at 85–90%. Build the habit." },
+  2: { name: "Build", desc: "Heavier weights and more sets. Sprints go all-out. This is where size and strength really start to move." },
+  3: { name: "Athlete", desc: "Heaviest lifts, jumps paired with heavy sets, flying sprints. Turn the strength into speed, then retest." }
+};
+
+const WARM_LOWER = {
+  id: "warm", kind: "routine", type: "ground", label: "Warm-up · ~9 min", title: "Ground Game · lower",
+  summary: "Raise · Crawl · Open up · Big 3 · Prime", doneLabel: "Warm-up done",
+  stages: [
+    { name: "Raise", moves: [["Jump rope, skips or an easy jog", "2 min"]] },
+    { name: "Crawl", moves: [
+      ["Bear crawl", "10 m fwd + 10 m back", "Knees an inch off the floor, back flat"],
+      ["Inchworm", "× 5", "Walk your hands out to a plank, then walk your feet in"]] },
+    { name: "Open up", moves: [
+      ["World's greatest stretch", "× 3 / side", "Lunge, elbow to instep, then rotate and reach up"],
+      ["Cossack squat", "× 5 / side", "Wide stance, sit deep over one leg, other leg straight with toes up"],
+      ["Knee-to-wall ankle rocks", "× 10 / side", "Knee travels past the toes, heel stays down"]] },
+    { name: "Back armor · McGill Big 3", moves: [
+      ["Curl-up", "3 × 10 s", "One knee bent, hands under your lower back, lift head and shoulders a few cm"],
+      ["Side plank", "3 × 10 s / side", "From the knees in weeks 1–4, from the feet after"],
+      ["Bird dog", "3 × 10 s / side", "Opposite arm and leg out long, hips level, make a fist"]] },
+    { name: "Prime", moves: [["Skips for height", "2 × 15 m", "Drive the knee, swing the arms"]] }
+  ]
+};
+
+const WARM_UPPER = {
+  id: "warm", kind: "routine", type: "ground", label: "Warm-up · ~7 min", title: "Ground Game · upper",
+  summary: "Raise · Crawl · Open up · Prime", doneLabel: "Warm-up done",
+  stages: [
+    { name: "Raise", moves: [["Jump rope, rower or jumping jacks", "2 min"]] },
+    { name: "Crawl", moves: [
+      ["Bear crawl", "10 m fwd + 10 m back"],
+      ["Inchworm + push-up", "× 5"]] },
+    { name: "Open up", moves: [
+      ["Open book", "× 6 / side", "Lie on your side, knees bent, rotate the top arm open"],
+      ["Band pass-through", "× 10", "Wide grip, straight arms, never painful"]] },
+    { name: "Prime", moves: [
+      ["Band pull-apart", "× 15"],
+      ["Dead hang", "30 s"]] }
+  ]
+};
+
+const ARMOR = {
+  id: "armor", kind: "routine", type: "ground", label: "Daily Armor · ~10 min", title: "Back armor + mobility",
+  summary: "Big 3 · Mobility · Ground", doneLabel: "Daily Armor done", open: true,
+  stages: [
+    { name: "McGill Big 3", moves: [
+      ["Curl-up", "3 · 2 · 1 × 10 s", "Three 10-s holds, rest 15 s, two holds, rest, one hold"],
+      ["Side plank", "3 · 2 · 1 × 10 s / side"],
+      ["Bird dog", "3 · 2 · 1 × 10 s / side"]] },
+    { name: "Mobility", moves: [
+      ["Deep squat hold", "60 s", "Heels down; hold a doorframe if you need to"],
+      ["Couch stretch", "45 s / side", "Back knee against a wall or couch, squeeze that glute"]] },
+    { name: "Ground", moves: [
+      ["Floor to stand, no hands", "× 5", "Sit cross-legged, then stand without using hands or knees"]] }
+  ]
+};
+
+const FLOW = {
+  id: "flow", kind: "routine", type: "ground", label: "Ground flow · ~10 min", title: "Move like a kid again",
+  summary: "On grass or a mat, no rush", doneLabel: "Ground flow done", open: true,
+  stages: [
+    { name: "Crawl and hop · 2 rounds", moves: [
+      ["Bear crawl", "10 m each way", "Forward, back, and sideways both ways"],
+      ["Crab reach", "× 5 / side", "From a crab, drive your hips up and reach one arm overhead"],
+      ["Frog hops", "× 6", "Deep squat, hands down, hop forward softly"]] },
+    { name: "Get up · 2 rounds", moves: [
+      ["Turkish get-up", "× 2 / side", "A shoe balanced on your fist first, then a light kettlebell"],
+      ["Floor to stand, no hands", "× 5", "Sit cross-legged, then stand without using hands or knees"]] },
+    { name: "Skill practice", moves: [
+      ["Skill of the week", "5 min", "Pick one from Progress: cartwheel, wall handstand, pistol to a bench"]] }
+  ]
+};
+
+const STRETCH = {
+  id: "stretch", kind: "routine", type: "ground", label: "Long stretch · ~7 min", title: "Open up",
+  summary: "Hold each 45–60 s and breathe slowly", doneLabel: "Stretch done", open: true,
+  stages: [
+    { name: "Hold and breathe", moves: [
+      ["Couch stretch", "60 s / side", "Hip flexors and quads, usually tight after a growth spurt"],
+      ["Elevated hamstring stretch", "60 s / side", "Heel on a bench, hinge at the hips, back flat"],
+      ["Calf stretch + ankle rocks", "45 s + × 10 / side"],
+      ["Thread the needle", "× 6 / side", "On hands and knees, reach under, then up to the ceiling"],
+      ["Deep squat hold", "60 s"]] }
+  ]
+};
+
+const MON = {
+  day: "Monday", name: "Fast", focus: "Lower body · speed + strength", time: "~50 min",
+  why: "Sprint and jump first while you're fresh, then build the hip and leg strength that makes the next sprint faster.",
+  blocks: [
+    WARM_LOWER,
+    { id: "speed", kind: "list", type: "power", label: "Speed + power", title: "Sprints + jumps",
+      note: ["Full rest between reps. Stop the moment you slow down.", "Full rest between reps. Stop the moment you slow down.", "Full rest between sprints. Box jumps now pair with the deadlift."],
+      items: [
+        { id: "askip", name: "A-skip", rx: "2 × 20 m", meta: "Rhythm over speed", ph: false,
+          cues: ["Skip with a bounce: knee up, toes up, foot lands under your hips.", "Arms swing from the shoulder, elbows bent about 90°.", "Stay tall with quiet, springy contacts."],
+          swap: "A-march over 20 m.", yt: "a skip sprint drill" },
+        { id: "accel", name: ["Acceleration sprints", "Acceleration sprints", "Accelerations + flying 20s"],
+          rx: ["5 × 15 m", "6 × 20 m", "4 × 20 m + 3 × flying 20 m"],
+          meta: ["85–90% effort · two-point start · walk back, then 60 s", "All-out · rotate starts: falling, push-up, half-kneeling · rest 90–120 s", "All-out · flying 20: build up over 20 m, sprint the next 20 m flat out · rest 2–3 min"],
+          ph: "best time / notes",
+          cues: ["Lean from the ankles, not the waist. Push the ground back behind you.", "Big, fast arm swings, hands travelling from cheek to hip.", "Stay relaxed: loose jaw, loose hands. Tension makes you slower.", "Every rep should be as fast as the first."],
+          swap: "Hill sprints of 8–10 s, or 6 × 8 s all-out on a bike.", yt: "sprint acceleration technique" },
+        { id: "box", name: "Box jump", rx: ["3 × 3", "4 × 3", "4 × 3"],
+          meta: ["Box about knee height · step down · rest 60 s", "Slightly higher box · step down · rest 60 s", "Do each set 30–60 s after a deadlift set"], ph: "box height",
+          cues: ["Swing your arms back, dip fast, then explode up.", "Land soft and quiet in the same athletic stance you took off from.", "Stand tall on the box, then step down. Never jump down.", "Pick a box you land on easily. Power is the goal, not height."],
+          swap: "Broad jump, sticking the landing for 2 s.", yt: "box jump technique landing" }
+      ] },
+    { id: "main", kind: "list", type: "strength", label: "Strength", title: "Main lift", note: "Warm up with 2–3 lighter sets first.",
+      items: [
+        { id: "trap", name: "Trap-bar deadlift", tag: "Main lift", rx: ["3 × 8", "4 × 6", "4 × 4"],
+          meta: ["RIR 3 · 3 s down · rest 2 min", "RIR 2 · rest 2–3 min", "RIR 1–2 · rest 3 min"], ph: "kg × reps",
+          cues: ["Stand in the middle of the bar, feet hip-width. Hips back, grab the handles.", "Big breath into your belly, then brace hard.", "Push the floor away. Hips and shoulders rise together.", "Finish tall with glutes squeezed. Don't lean back at the top."],
+          why: "The trap bar keeps the load in line with your body, so it's kinder to your back than a straight bar and carries over well to jumping.",
+          swap: "No trap bar: dumbbell or kettlebell deadlift from blocks, or a barbell Romanian deadlift.", yt: "trap bar deadlift form" }
+      ] },
+    { id: "a", kind: "list", type: "strength", label: "Superset A", title: "Single-leg strength + groin", note: "A1, rest 60 s, A2, rest 60–90 s. Repeat.",
+      items: [
+        { id: "bss", pair: "A1", name: "Bulgarian split squat", rx: ["3 × 8 / leg", "3 × 8–10 / leg", "3 × 6–8 / leg"],
+          meta: ["Bodyweight or light dumbbells · RIR 2", "Dumbbells · RIR 2", "Heavier dumbbells · RIR 1–2"], ph: "kg × reps",
+          cues: ["Back foot laces-down on a bench. Front foot far enough forward to drop straight down.", "A slight forward lean is good. Front knee tracks over your toes.", "Lower for 2 s, then drive up through your whole front foot.", "Start with your weaker leg and match its reps on the other."],
+          swap: "Reverse lunge, or a split squat with the back foot on the floor.", yt: "bulgarian split squat form" },
+        { id: "cop", pair: "A2", name: "Copenhagen plank", rx: ["3 × 15 s / side", "3 × 20 s / side", "3 × 25 s / side"],
+          meta: ["Short lever: knee on the bench", "Knee or foot on the bench", "Long lever: foot on the bench"], ph: "seconds",
+          cues: ["Side plank with your top leg resting on a bench.", "Squeeze the top leg down into the bench to lift your hips.", "Straight line from head to feet. No sagging."],
+          why: "Strong adductors are one of the best-proven ways to prevent groin injuries in sport.",
+          swap: "Side-lying adductor raise, 3 × 12 / side.", yt: "copenhagen plank short lever" }
+      ] },
+    { id: "b", kind: "list", type: "ground", label: "Superset B", title: "Hamstring + calf armor", note: "B1, rest 60 s, B2, rest 60 s.",
+      items: [
+        { id: "nordic", pair: "B1", name: "Nordic hamstring curl", rx: ["2 × 4", "3 × 5", "3 × 6"],
+          meta: ["Band-assisted or partial range · lower as slowly as you can", "Less assistance", "Slower lowering, little or no assistance"], ph: "reps / assist",
+          cues: ["Kneel on a pad with your ankles held by a partner or hooked under something solid.", "Keep a straight line from knees to head. Don't bend at the hips.", "Lower forward as slowly as you can and catch yourself with your hands.", "Push back up with your hands. The lowering is the exercise."],
+          why: "Nordics cut hamstring strains roughly in half in field sports. Expect sore hamstrings for the first two weeks.",
+          swap: "Swiss-ball or slider leg curl 3 × 10, or a machine hamstring curl.", yt: "nordic hamstring curl progression" },
+        { id: "calf", pair: "B2", name: "Standing calf raise", rx: ["3 × 12", "3 × 12–15", "3 × 10–12"],
+          meta: ["2 s up, 1 s pause, 2 s down", "2 s up, 1 s pause, 2 s down", "Heavier · same tempo"], ph: "kg × reps",
+          cues: ["Balls of your feet on a step, knees straight.", "Rise as high as you can, pause, then lower into a big stretch.", "Strong calves protect your Achilles and make you springier."],
+          swap: "Single-leg calf raise on a step, bodyweight.", yt: "standing calf raise full range" }
+      ] }
+  ]
+};
+
+const WED = {
+  day: "Wednesday", name: "Strong", focus: "Upper body · power + strength", time: "~45 min",
+  why: "Heavy presses and pulls build your frame. Explosive push-ups teach your upper body to be fast as well as strong.",
+  blocks: [
+    WARM_UPPER,
+    { id: "power", kind: "list", type: "power", label: "Power", title: "Explosive push-ups", note: "Every rep at full speed. Rest 45 s.",
+      items: [
+        { id: "plyopush", name: ["Explosive push-up (hands on a bench)", "Explosive push-up", "Explosive push-up"], rx: ["3 × 5", "3 × 5", "4 × 4"],
+          meta: ["Hands on a bench or box · push hard enough that your hands leave it", "From the floor · hands leave the floor", "From the floor · land softly and go straight into the next rep"], ph: false,
+          cues: ["Body in one straight line, hands just wider than your shoulders.", "Lower under control, then push the floor away as fast as you can so your hands lift off.", "Land with soft elbows and reset. Speed matters more than reps."],
+          why: "Trains your upper body to produce force fast, the same quality behind throwing, shoving and fending off.",
+          swap: "Fast band or cable rotational punch, 3 × 5 / side.", yt: "explosive plyometric push up" }
+      ] },
+    { id: "a", kind: "list", type: "strength", label: "Superset A", title: "Press + pull", note: "Warm up with 2–3 lighter sets. A1, rest 90 s, A2, rest 90 s.",
+      items: [
+        { id: "bench", pair: "A1", name: "Bench press", tag: "Main lift", rx: ["3 × 8", "4 × 6", "4 × 5"],
+          meta: ["RIR 3 · 2 s down", "RIR 2", "RIR 1–2"], ph: "kg × reps",
+          cues: ["Eyes under the bar. Pull your shoulder blades back and down and keep them pinned.", "Feet planted, butt on the bench.", "Lower to your lower chest with elbows about 45° from your sides.", "Always use a spotter or safety bars."],
+          swap: "Dumbbell bench press, or weighted push-ups.", yt: "bench press form" },
+        { id: "pull", pair: "A2", name: ["Pull-up (assisted if needed)", "Pull-up", "Weighted pull-up"], rx: ["3 × max minus 2", "4 × 5–6", "4 × 4–5"],
+          meta: ["Under 5 reps? Use a band", "Add weight once you hit 3 × 8 clean", "Add 2.5 kg when every set is clean"], ph: "reps / +kg",
+          cues: ["Start from a dead hang, then pull your shoulders down away from your ears.", "Pull your chest toward the bar. Chin over is the minimum.", "Lower for 2–3 s all the way down. No swinging or kipping.", "Long arms make pull-ups harder, which is also why they build such wide lats."],
+          swap: "Lat pulldown, or slow negatives: jump up, lower in 5 s.", yt: "strict pull up form" }
+      ] },
+    { id: "b", kind: "list", type: "build", label: "Superset B", title: "Overhead + row", note: "B1, rest 60 s, B2, rest 60–90 s.",
+      items: [
+        { id: "land", pair: "B1", name: "Half-kneeling landmine press", rx: ["3 × 8 / side", "3 × 8 / side", "3 × 6–8 / side"],
+          meta: ["RIR 2", "Heavier · RIR 2", "RIR 1–2"], ph: "kg × reps",
+          cues: ["Kneel with the knee on your pressing side down. Squeeze that glute.", "Ribs down, no leaning back.", "Press up and forward along the bar's arc and reach at the top."],
+          why: "Overhead strength that's easy on the shoulders and doesn't load your lower back.",
+          swap: "Half-kneeling one-arm dumbbell press.", yt: "half kneeling landmine press" },
+        { id: "row", pair: "B2", name: "Chest-supported row", rx: ["3 × 10", "3 × 8–10", "3 × 8"], meta: "Dumbbells on an incline bench · 1 s squeeze", ph: "kg × reps",
+          cues: ["Lie chest-down on an incline bench with the dumbbells hanging.", "Pull your elbows toward your back pockets.", "Squeeze your shoulder blades for 1 s, then lower to a full stretch.", "The bench supports you, so your lower back gets a rest."],
+          swap: "Seated cable row, or an inverted row under a bar.", yt: "chest supported dumbbell row" }
+      ] },
+    { id: "c", kind: "list", type: "build", label: "Tri-set C", title: "Shoulders + back armor", note: "C1, C2, C3, then rest 60 s.",
+      items: [
+        { id: "lat", pair: "C1", name: "Lateral raise", rx: ["3 × 12–15", "3 × 12–15", "3 × 15–20"], meta: "2–3 s down", ph: "kg × reps",
+          cues: ["Slight forward lean, soft elbows.", "Lead with your elbows out to the sides, up to shoulder height.", "Lower slowly. If you're swinging, it's too heavy."],
+          why: "Side delts are what make shoulders look wide.",
+          swap: "Cable or band lateral raise.", yt: "dumbbell lateral raise form" },
+        { id: "face", pair: "C2", name: "Face pull", rx: "3 × 15", meta: "Light, controlled reps", ph: "kg",
+          cues: ["Rope at forehead height. Pull toward your face, splitting the rope.", "Thumbs back, elbows high. Finish like a double-biceps pose.", "Keeps your shoulders healthy and pulls your posture tall."],
+          swap: "Band pull-apart, 3 × 20.", yt: "face pull form" },
+        { id: "pallof", pair: "C3", name: "Pallof press", rx: "3 × 10 / side", meta: "2 s hold at full reach", ph: "kg",
+          cues: ["Stand side-on to a cable or band at chest height.", "Ribs down, glutes tight, press straight out.", "Don't let it twist you. Resisting the twist is the exercise."],
+          swap: "Band Pallof press at home.", yt: "pallof press form" }
+      ] }
+  ]
+};
+
+const FRI = {
+  day: "Friday", name: "Spring", focus: "Lower body · jumps, agility + strength", time: "~45 min",
+  why: "Make your legs springy, learn to stop and cut like an athlete, then build squat strength and the hinge that protects your back.",
+  blocks: [
+    WARM_LOWER,
+    { id: "power", kind: "list", type: "power", label: "Power + agility", title: "Bounds + shuttle", note: "Full rest between reps. Quality over quantity.",
+      items: [
+        { id: "bound", name: "Lateral bound and stick", rx: ["3 × 3 / side", "3 × 4 / side", "3 × 4 / side"],
+          meta: ["Small bounds · freeze 2 s on landing", "Farther · freeze 2 s", "Continuous bounds, stick the last one"], ph: false,
+          cues: ["Push off one leg and jump sideways onto the other.", "Land with hips back and knee over toes. Freeze for 2 s.", "Knee caving in? Make the bounds shorter until it doesn't."],
+          why: "Side-to-side power for cutting, defending and changing direction.",
+          swap: "Skater hops in place.", yt: "lateral bound stick landing" },
+        { id: "shuttle", name: "5-10-5 shuttle", rx: ["3 reps", "4 reps", "4 reps"],
+          meta: ["70% · learn the turns · rest 60 s", "Fast · rest 90 s", "Race pace · rest 2 min · time your best"], ph: "best time",
+          cues: ["Start on the middle line. Sprint 5 m right and touch the line, 10 m left and touch, then 5 m back through the middle.", "Brake before each turn with short, choppy steps and low hips. Good braking protects your knees.", "Push off the outside leg, keep your eyes up, and turn with your hips."],
+          swap: "Mirror drill with a partner, 4 × 6 s.", yt: "5 10 5 pro agility drill" }
+      ] },
+    { id: "main", kind: "list", type: "strength", label: "Strength", title: "Main lift", note: "Warm up with 2–3 lighter sets first.",
+      items: [
+        { id: "squat", name: ["Goblet squat", "Front squat", "Front squat"], tag: "Main lift", rx: ["3 × 8", "4 × 6", "4 × 4–5"],
+          meta: ["RIR 3 · 3 s down, 1 s pause at the bottom", "RIR 2 · rest 2–3 min", "RIR 1–2 · rest 3 min"], ph: "kg × reps",
+          cues: ["Elbows up, chest proud. Big breath and brace before every rep.", "Sit down between your hips with your knees following your toes.", "Heels lifting? Stand on small plates. That's normal for tall lifters.", "Drive up by pushing the floor apart."],
+          swap: "No rack: stay on heavy goblet squats. Leg press or a safety-bar squat also work. Back squat is fine once a coach has checked it.",
+          yt: ["goblet squat form", "front squat form", "front squat form"] }
+      ] },
+    { id: "a", kind: "list", type: "strength", label: "Superset A", title: "Hinge + core", note: "A1, rest 60 s, A2, rest 60–90 s.",
+      items: [
+        { id: "rdl", pair: "A1", name: "Romanian deadlift", rx: ["3 × 10", "3 × 8", "3 × 6–8"],
+          meta: ["Light dumbbells · 3 s down · RIR 3", "Dumbbells or barbell · RIR 2", "RIR 1–2"], ph: "kg × reps",
+          cues: ["Soft knees. Push your hips back like you're shutting a car door with your butt.", "The weight slides down your thighs while your back stays flat.", "Stop when your hamstrings are fully stretched, usually just below the knee.", "Stand up by squeezing your glutes."],
+          why: "This is the hinge that protects your back for life: your hips do the work while your spine stays neutral.",
+          swap: "Single-leg RDL with one dumbbell, or a 45° back extension.", yt: "romanian deadlift form" },
+        { id: "core", pair: "A2", name: ["Dead bug", "Ab-wheel rollout (kneeling)", "Ab-wheel rollout (kneeling)"], rx: ["3 × 8 / side", "3 × 6–8", "3 × 8–10"],
+          meta: ["Slow · breathe out fully as you reach", "Short range at first", "Longer range"], ph: "reps",
+          cues: ["Dead bug: your lower back stays glued to the floor the whole time.", "Rollout: ribs stay pulled down. If your back arches, shorten the range.", "Teaches your trunk to resist bending backward, which protects your lower back."],
+          swap: "Long-reach plank, or a stability-ball rollout.", yt: ["dead bug exercise", "kneeling ab wheel rollout form", "kneeling ab wheel rollout form"] }
+      ] },
+    { id: "carry", kind: "list", type: "ground", label: "Finisher", title: "Carry",
+      items: [
+        { id: "suit", name: "Suitcase carry", rx: ["3 × 20 m / side", "3 × 25 m / side", "3 × 30 m / side"], meta: "One heavy dumbbell or kettlebell", ph: "kg",
+          cues: ["Carry one heavy weight at your side.", "Walk tall without leaning toward or away from it.", "Your obliques work to keep you straight, which is great armor for your back."],
+          swap: "Carry one heavy bag.", yt: "suitcase carry exercise" }
+      ] }
+  ]
+};
+
+const SAT = {
+  day: "Saturday", name: "Build", focus: "Upper body · physique", time: "~50 min",
+  why: "More sets, shorter rests. This is the session that fills out your shoulders, back, chest and arms.",
+  note: "Rest 60–90 s between exercises. On the last set of each, stop with about 1 rep left in the tank.",
+  blocks: [
+    WARM_UPPER,
+    { id: "a", kind: "list", type: "build", label: "Superset A", title: "Chest + lats",
+      items: [
+        { id: "incline", pair: "A1", name: "Incline dumbbell press", rx: ["3 × 10", "3 × 8–12", "4 × 8–10"], meta: "Bench at 30° · RIR 1–2", ph: "kg × reps",
+          cues: ["Bench at about 30°. Shoulder blades back and down.", "Lower to your upper chest with elbows slightly tucked.", "Press up and slightly in. Full stretch at the bottom."],
+          why: "Upper chest is what fills out the top of a T-shirt.",
+          swap: "Feet-raised push-up, or an incline machine press.", yt: "incline dumbbell press form" },
+        { id: "pulldown", pair: "A2", name: "Lat pulldown", rx: ["3 × 10–12", "3 × 10–12", "4 × 8–12"], meta: "1 s squeeze at the bottom", ph: "kg × reps",
+          cues: ["Lean back slightly with your chest up.", "Drive your elbows down to your back pockets.", "Bar to your upper chest, then let it rise to a full stretch."],
+          why: "Wide lats are the V in a V-taper.",
+          swap: "Neutral-grip pull-ups, or band pulldowns.", yt: "lat pulldown form" }
+      ] },
+    { id: "b", kind: "list", type: "build", label: "Superset B", title: "Dip + row",
+      items: [
+        { id: "dip", pair: "B1", name: ["Push-up, slow", "Dip", "Dip"], rx: ["3 × 12–15", "3 × 8–12", "3 × 10–12"],
+          meta: ["3 s down", "Controlled · RIR 1–2", "Add weight once 3 × 12 is easy"], ph: "reps",
+          cues: ["Push-up: one straight line from head to heels, chest to a fist's height off the floor.", "Dip: lean slightly forward and lower until your upper arms are about parallel to the floor.", "Any pain at the front of your shoulder: switch to push-ups."],
+          swap: "Close-grip push-up or a machine dip.", yt: ["slow push up form", "chest dip form", "chest dip form"] },
+        { id: "dbrow", pair: "B2", name: "One-arm dumbbell row", rx: ["3 × 10 / side", "3 × 10 / side", "3 × 8–10 / side"], meta: "Hand and knee on a bench · RIR 1–2", ph: "kg × reps",
+          cues: ["Flat back, hand and knee on the bench.", "Pull the dumbbell to your hip, not your chest.", "Squeeze at the top, then a full stretch at the bottom."],
+          swap: "One-arm cable row.", yt: "one arm dumbbell row form" }
+      ] },
+    { id: "c", kind: "list", type: "build", label: "Superset C", title: "Shoulders + abs", note: "C1, C2, rest 60 s.",
+      items: [
+        { id: "lat", pair: "C1", name: "Lateral raise", rx: ["3 × 15", "4 × 12–15", "4 × 12–20"],
+          meta: ["2–3 s down", "2–3 s down", "Last set: at failure, add 5–10 partial reps"], ph: "kg × reps",
+          cues: ["Slight forward lean, lead with your elbows.", "Up to shoulder height, then lower slowly.", "Light and strict beats heavy and swinging."],
+          swap: "Cable lateral raise.", yt: "dumbbell lateral raise form" },
+        { id: "hang", pair: "C2", name: ["Hanging knee raise", "Hanging knee raise", "Hanging leg raise"], rx: ["3 × 8–10", "3 × 10–12", "3 × 8–10"], meta: "From a still hang · 2 s down", ph: "reps",
+          cues: ["Hang still, then curl your pelvis up toward your ribs, not just your knees up.", "Lower slowly, no swinging.", "Works your abs, grip and shoulders at once."],
+          swap: "Lying leg raise or reverse crunch.", yt: ["hanging knee raise form", "hanging knee raise form", "hanging leg raise form"] }
+      ] },
+    { id: "d", kind: "list", type: "build", label: "Superset D", title: "Arms",
+      items: [
+        { id: "curl", pair: "D1", name: "Incline dumbbell curl", rx: ["3 × 10–12", "3 × 10–12", "3 × 8–12"], meta: "3 s down", ph: "kg × reps",
+          cues: ["Bench at about 45° with your arms hanging straight down and back.", "Curl without swinging and squeeze at the top.", "Lower slowly to a full stretch."],
+          swap: "Standing dumbbell or cable curl.", yt: "incline dumbbell curl form" },
+        { id: "tri", pair: "D2", name: "Overhead triceps extension", rx: ["3 × 10–12", "3 × 10–12", "3 × 8–12"], meta: "Cable rope or one dumbbell", ph: "kg × reps",
+          cues: ["Elbows point up and stay narrow.", "Lower behind your head into a deep stretch, then straighten fully.", "Triceps make up about two-thirds of your upper arm."],
+          swap: "Rope pushdown, or close-grip push-ups.", yt: "overhead cable triceps extension form" }
+      ] },
+    { id: "engine", kind: "list", type: "engine", label: "Engine", title: "Finisher",
+      items: [
+        { id: "intervals", name: ["Easy cardio", "Intervals 30/90", "Intervals 1:1"], rx: ["8–10 min easy", "5 × 30 s hard / 90 s easy", "5 × 1 min hard / 1 min easy"],
+          meta: ["Bike or rower · conversation pace", "Bike, rower or hill · hard = 8 out of 10", "Bike, rower or shuttle runs · hard = 8 out of 10"], ph: "notes",
+          cues: ["Hard means you can only say a few words. Easy means you recover fully.", "Bike or rower spares your legs for Monday.", "This is the engine for repeated sprints late in games."],
+          swap: "Hill repeats or shuttle runs with the same timing.", yt: "bike interval workout beginner" }
+      ] }
+  ]
+};
+
+const SUN = {
+  day: "Sunday", name: "Engine", full: "Engine & Ground", focus: "Aerobic base · movement · mobility", time: "~45–60 min, easy",
+  why: "Build your endurance base, get your childhood movement back, and recover for Monday. You should finish feeling better than when you started.",
+  blocks: [
+    { id: "z2", kind: "list", type: "engine", label: "Engine", title: "Long easy cardio", note: "Conversation pace the whole way.",
+      items: [
+        { id: "long", name: "Zone 2 cardio", rx: ["25–30 min", "30–35 min", "35–40 min"],
+          meta: ["Run-walk is fine: 3 min jog, 1 min walk", "Run-walk 6:1, or continuous if it feels easy", "Continuous"], ph: "minutes / km",
+          cues: ["Easy enough to talk in full sentences: roughly 130–150 bpm if you wear a watch.", "Gasping? Slow down or walk. Slow is the point.", "Jog, bike, swim, row, hike, or a long uphill walk all count."],
+          why: "Easy aerobic work grows your heart's capacity and the energy systems in your muscles. That's what stops you gassing out in games.",
+          swap: "A long, easy pickup game, bike ride or swim for the same time.", yt: "zone 2 running easy pace" }
+      ] },
+    FLOW, STRETCH,
+    { id: "checkin", kind: "checkin", type: "ground", label: "Weekly check-in", title: "How was the week?" }
+  ]
+};
+
+const restDay = day => ({
+  day, name: "Armor", full: "Daily Armor", rest: true, focus: "Sport or rest · back armor + mobility", time: "~10 min",
+  why: "Rest days still get a little work: trunk endurance for your back and the mobility that lets you move freely.",
+  note: "Playing sport today? That's your training, so do Daily Armor before or after. No sport? Add a 20–30 minute easy bike ride, jog or brisk walk. It's your extra cardio for the week.",
+  blocks: [ARMOR]
+});
+
+const PLAN = { mon: MON, tue: restDay("Tuesday"), wed: WED, thu: restDay("Thursday"), fri: FRI, sat: SAT, sun: SUN };
+const DAY_ORDER = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+const DOW_KEYS = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+const CHECKPOINTS = [1, 4, 8, 12];
+
+const TESTS = [
+  { id: "broad", name: "Standing broad jump", unit: "cm", better: "up", how: "Two-foot jump forward, land and hold it. Measure to the back of your rearmost heel. Best of 3." },
+  { id: "sprint", name: "20 m sprint", unit: "s", better: "down", how: "Standing start. A friend times it on a phone or a sprint-timing app. Best of 2, full rest between." },
+  { id: "pullups", name: "Strict pull-ups", unit: "reps", better: "up", how: "Dead hang to chin over the bar. Stop at the first rep that isn't full range." },
+  { id: "pushups", name: "Push-ups", unit: "reps", better: "up", how: "Chest to a fist's height off the floor, body straight. Stop when form breaks." },
+  { id: "splankL", name: "Side plank, left", unit: "s", better: "up", how: "On your forearm and feet in a straight line. Stop when your hips drop." },
+  { id: "splankR", name: "Side plank, right", unit: "s", better: "up", how: "Aim to keep both sides within about 10% of each other." },
+  { id: "backext", name: "Back-extension hold", unit: "s", better: "up", how: "Hips on a back-extension bench, body straight and level, arms crossed. Stop when you can't stay level, or at 3 min." },
+  { id: "ktw", name: "Knee-to-wall, worse side", unit: "cm", better: "up", how: "Toe distance from the wall where your knee still touches it with your heel down. 10 cm or more is good." },
+  { id: "squat", name: "Deep squat hold", unit: "s", better: "up", how: "Heels down, chest up, no support. Stop at 120 s." },
+  { id: "sitrise", name: "Floor sit-to-rise", unit: "/ 10", better: "up", how: "Sit down cross-legged, then stand up. Start at 10. Lose 1 point for each hand, knee or forearm you use (down or up) and 0.5 for a wobble." },
+  { id: "cooper", name: "12-minute run", unit: "m", better: "up", how: "Cover as much distance as you can in 12 minutes on a track or with a GPS app. Pace it evenly." },
+  { id: "height", name: "Height", unit: "cm", better: "none", how: "Growing more than about 1 cm a month? Ease off jumps and sprints a little that month." }
+];
+
+const TEST_DAY = {
+  mon: { when: "Before the sprints, after the warm-up", ids: ["broad", "sprint"] },
+  wed: { when: "Right after the warm-up, 3 min apart", ids: ["pullups", "pushups"] },
+  fri: { when: "At the end of the session", ids: ["splankL", "splankR", "backext", "ktw", "squat", "sitrise"] },
+  sun: { when: "Height in the morning. The 12-minute run replaces the easy cardio", ids: ["height", "cooper"] }
+};
+
+const SKILLS = [
+  { name: "Level 1 · Foundations", sub: "Movement you had as a kid. Get these back first.", items: [
+    ["squat2", "Deep squat with heels down for 2 minutes"],
+    ["sitrise10", "Floor sit-to-rise, 10 out of 10"],
+    ["hang60", "Dead hang for 60 seconds"],
+    ["bear30", "Bear crawl 30 m without stopping"],
+    ["toes", "Touch your toes with straight legs"],
+    ["side60", "Side plank for 60 s on each side"],
+    ["rope2", "Jump rope for 2 minutes without tripping"]] },
+  { name: "Level 2 · Athlete", sub: "Proof the plan is working.", items: [
+    ["pu10", "10 strict pull-ups"],
+    ["push30", "30 perfect push-ups"],
+    ["tgu16", "Turkish get-up with 16 kg, each side"],
+    ["pistol", "Pistol squat to a bench, each leg"],
+    ["broadH", "Broad jump your own height"],
+    ["cart", "Cartwheel on both sides (on grass)"],
+    ["wallhs", "Chest-to-wall handstand for 30 s"],
+    ["run5", "Run 5 km without stopping"]] },
+  { name: "Level 3 · Next level", sub: "Long-term targets. Some take a year or more.", items: [
+    ["trap15", "Trap-bar deadlift 1.5× bodyweight for 5"],
+    ["wpu10", "Pull-up with +10 kg for 5"],
+    ["benchBW", "Bench press your bodyweight for 5"],
+    ["fsBW", "Front squat your bodyweight for 5"],
+    ["rim", "Touch a basketball rim"],
+    ["hs10", "Freestanding handstand for 10 s"],
+    ["ttb10", "10 toes-to-bar"],
+    ["run25", "5 km in under 25 minutes"],
+    ["mu", "One strict muscle-up"]] }
+];
+
+/* ---------- helpers ---------- */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const pick = (v, p) => Array.isArray(v) ? v[p - 1] : v;
+const ytUrl = q => "https://www.youtube.com/results?search_query=" + encodeURIComponent(q);
+const phaseOf = w => (w <= 4 ? 1 : w <= 8 ? 2 : 3);
+const isLight = w => w === 4 || w === 8 || w === 12;
+const isTest = w => CHECKPOINTS.includes(w);
+const lighten = rx => String(rx).replace(/(\d+)(\s*×)/g, (m, n, rest) => Math.max(1, Math.ceil(Number(n) / 2)) + rest);
+const parseNum = v => {
+  if (v == null || v === "") return null;
+  const n = parseFloat(String(v).replace(",", "."));
+  return Number.isFinite(n) ? n : null;
+};
+const fmt = (n, d = 1) => {
+  const r = Math.round(n * Math.pow(10, d)) / Math.pow(10, d);
+  return String(r);
+};
+
+/* ---------- storage: the viewer's private account store, with this browser as a fallback ---------- */
+const LS_KEY = "athlete-build-v1";
+const store = { data: {}, db: null, uid: null, mode: "local" };
+let canLocal = false;
+try { localStorage.setItem(LS_KEY + ":t", "1"); localStorage.removeItem(LS_KEY + ":t"); canLocal = true; } catch (e) { canLocal = false; }
+try {
+  const raw = localStorage.getItem(LS_KEY);
+  const parsed = raw ? JSON.parse(raw) : null;
+  if (parsed && typeof parsed === "object") store.data = parsed;
+} catch (e) { /* storage unavailable: start empty */ }
+
+const getDoc = id => store.data[id] || {};
+const mutDoc = id => store.data[id] || (store.data[id] = {});
+const clone = o => JSON.parse(JSON.stringify(o || {}));
+function saveLocal() {
+  try { localStorage.setItem(LS_KEY, JSON.stringify(store.data)); } catch (e) { /* ignore */ }
+}
+function hasContent(o) {
+  if (o == null) return false;
+  if (typeof o !== "object") return o !== "" && o !== false;
+  return Object.values(o).some(hasContent);
+}
+
+const SAVE_TEXT = {
+  local: ["local", "Saved in this browser · back up in Progress"],
+  nolocal: ["warn", "This browser isn't saving your log. Turn off private browsing."],
+  saving: ["account", "Saving to your Claude account…"],
+  saved: ["account", "Saved to your Claude account"],
+  offline: ["warn", "Couldn't reach your account. Saved on this device for now."],
+  full: ["warn", "Your log is full. Clear some old notes to keep saving."]
+};
+function setSaveStatus(kind) {
+  const el = $("#save-status");
+  const t = SAVE_TEXT[kind] || SAVE_TEXT.local;
+  el.dataset.mode = t[0];
+  el.textContent = t[1];
+}
+
+const timers = {}, dirty = new Set(), writing = new Set();
+const colRef = () => store.db.collection("data/users/" + store.uid);
+let unsub = null;
+
+let persistAsked = false;
+function requestPersist() {
+  if (persistAsked) return;
+  persistAsked = true;
+  try { if (navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(() => {}); } catch (e) { /* ignore */ }
+}
+
+function save(id) {
+  requestPersist();
+  saveLocal();
+  if (!store.db) return;
+  dirty.add(id);
+  clearTimeout(timers[id]);
+  timers[id] = setTimeout(() => { delete timers[id]; flush(id); }, 700);
+  setSaveStatus("saving");
+}
+
+async function flush(id, attempt = 0) {
+  if (!store.db || writing.has(id) || !dirty.has(id)) return;
+  dirty.delete(id);
+  writing.add(id);
+  let failed = null;
+  try {
+    await colRef().doc(id).set(clone(store.data[id]));
+  } catch (e) {
+    failed = e || { code: "unavailable" };
+    dirty.add(id);
+  }
+  writing.delete(id);
+  if (failed) {
+    const code = failed.code;
+    if (code === "unavailable" && attempt === 0) {
+      setTimeout(() => flush(id, 1), 800 + Math.random() * 1200);
+      return;
+    }
+    if (["revoked", "not_granted", "capability_disabled", "capability_removed", "invalid_argument", "transform_error"].includes(code)) {
+      goLocal();
+      return;
+    }
+    setSaveStatus(code === "quota_exceeded" ? "full" : "offline");
+    return;
+  }
+  if (dirty.has(id) && !timers[id]) { flush(id); return; }
+  if (!dirty.size && !writing.size && !Object.keys(timers).length) setSaveStatus("saved");
+}
+
+function goLocal() {
+  if (unsub) { try { unsub(); } catch (e) { /* ignore */ } unsub = null; }
+  store.db = null;
+  store.mode = "local";
+  setSaveStatus(canLocal ? "local" : "nolocal");
+}
+
+async function connect() {
+  if (!window.claude || typeof window.claude.use !== "function") return;
+  let db = null, user = null;
+  try { [db, user] = await Promise.all([window.claude.use("db"), window.claude.use("user")]); } catch (e) { return; }
+  if (!db || !user) return;
+  let uid = null;
+  try { uid = await user.id(); } catch (e) { uid = null; }
+  if (!uid) return;
+  store.db = db;
+  store.uid = uid;
+  let first = true;
+  try {
+    unsub = colRef().onSnapshot(snap => {
+      const remote = {};
+      snap.docs.forEach(d => { if (d.exists) remote[d.id] = d.data(); });
+      let changed = false, weekChanged = false;
+      if (first) {
+        first = false;
+        store.mode = "account";
+        for (const id of Object.keys(store.data)) {
+          if (!(id in remote) && hasContent(store.data[id])) { dirty.add(id); flush(id); }
+        }
+        if (!dirty.size) setSaveStatus("saved");
+        const rw = remote.prefs && remote.prefs.week;
+        if (!weekTouched && rw >= 1 && rw <= 12 && rw !== state.week) { state.week = rw; weekChanged = true; }
+      }
+      for (const [id, body] of Object.entries(remote)) {
+        if (dirty.has(id) || writing.has(id) || timers[id]) continue;
+        const next = clone(body);
+        if (JSON.stringify(store.data[id]) !== JSON.stringify(next)) { store.data[id] = next; changed = true; }
+      }
+      if (changed) saveLocal();
+      if (changed || weekChanged) onRemoteChange(weekChanged);
+    }, () => goLocal());
+  } catch (e) {
+    goLocal();
+  }
+}
+
+/* ---------- binding: inputs carry data-bind="kind|a|b" and read/write the store ---------- */
+function bindGet(b) {
+  const [k, a, c] = b.split("|");
+  if (k === "done") return !!(getDoc(a).done || {})[c];
+  if (k === "log") return (getDoc(a).log || {})[c] || "";
+  if (k === "ci") return (getDoc(a).checkin || {})[c] ?? "";
+  if (k === "bench") return ((getDoc("bench").v || {})[a] || {})[c] ?? "";
+  if (k === "skill") return !!(getDoc("skills").done || {})[a];
+  return "";
+}
+
+function bindSet(b, val) {
+  if (bindGet(b) === val || (val === "" && bindGet(b) === "") ) return false;
+  const [k, a, c] = b.split("|");
+  let docId;
+  const setIn = (obj, key, v) => { if (v === "" || v === false || v == null) delete obj[key]; else obj[key] = v; };
+  if (k === "done" || k === "log" || k === "ci") {
+    docId = a;
+    const d = mutDoc(a);
+    const field = k === "ci" ? "checkin" : k;
+    d[field] = d[field] || {};
+    setIn(d[field], c, k === "done" ? (val ? true : false) : String(val).slice(0, 120));
+  } else if (k === "bench") {
+    docId = "bench";
+    const d = mutDoc("bench");
+    d.v = d.v || {};
+    d.v[a] = d.v[a] || {};
+    setIn(d.v[a], c, String(val).slice(0, 10));
+  } else if (k === "skill") {
+    docId = "skills";
+    const d = mutDoc("skills");
+    d.done = d.done || {};
+    setIn(d.done, a, val ? true : false);
+  } else return false;
+  save(docId);
+  return true;
+}
+
+function syncInputs(root) {
+  $$("[data-bind]", root).forEach(el => {
+    const v = bindGet(el.dataset.bind);
+    if (el.type === "checkbox") el.checked = !!v;
+    else if (el.type === "radio") el.checked = String(v) === el.value;
+    else if (el !== document.activeElement && el.value !== String(v)) el.value = v;
+  });
+  $$(".item", root).forEach(li => {
+    const c = li.querySelector('input[type="checkbox"]');
+    li.classList.toggle("is-done", !!(c && c.checked));
+  });
+}
+
+/* ---------- view state ---------- */
+const state = { week: 1, day: "mon", tab: "plan" };
+let weekTouched = false;
+const openHow = new Set();
+const routineOpen = {};
+{
+  const w = getDoc("prefs").week;
+  if (w >= 1 && w <= 12) state.week = w;
+  let seen = false;
+  try { seen = !!localStorage.getItem(LS_KEY + ":seen"); localStorage.setItem(LS_KEY + ":seen", "1"); } catch (e) { seen = false; }
+  state.day = seen ? DOW_KEYS[new Date().getDay()] : "mon";
+  const h = (location.hash || "").replace("#", "");
+  if (["plan", "progress", "fuel", "guide"].includes(h)) state.tab = h;
+}
+
+/* ---------- week bar ---------- */
+function renderWeekbar() {
+  const w = state.week, p = phaseOf(w);
+  $("#wk-num").textContent = w;
+  $("#wk-prev").disabled = w <= 1;
+  $("#wk-next").disabled = w >= 12;
+  $("#phase-num").textContent = "Phase " + p;
+  $("#phase-name").textContent = PHASES[p].name;
+  let desc = PHASES[p].desc;
+  if (w === 12) desc = "Test week. Train light, retest everything, and compare with week 1.";
+  else if (isLight(w)) desc = "Lighter week. Sets are cut roughly in half and weights drop about 10%, so your body can catch up. Do this week's tests.";
+  else if (w === 1) desc = PHASES[1].desc + " This week you also set your baseline tests.";
+  $("#phase-desc").textContent = desc;
+  const names = ["Foundation", "Build", "Athlete"];
+  let h = "";
+  for (let ph = 1; ph <= 3; ph++) {
+    h += '<div class="wk-phase"><div class="wk-segs">';
+    for (let i = 1; i <= 4; i++) {
+      const n = (ph - 1) * 4 + i;
+      const cls = ["wk-seg", isLight(n) ? "light" : "", isTest(n) ? "test" : "", n < w ? "past" : "", n === w ? "now" : ""].filter(Boolean).join(" ");
+      const extra = (isTest(n) ? ", test week" : "") + (isLight(n) ? ", lighter" : "");
+      h += `<button type="button" class="${cls}" data-week="${n}" aria-label="Week ${n}${extra}"${n === w ? ' aria-current="true"' : ""}>${n}</button>`;
+    }
+    h += `</div><div class="wk-pl">P${ph} · ${names[ph - 1]}</div></div>`;
+  }
+  $("#wk-track").innerHTML = h;
+}
+
+/* ---------- day strip ---------- */
+function renderDays() {
+  const today = DOW_KEYS[new Date().getDay()];
+  $("#days").innerHTML = DAY_ORDER.map(k => {
+    const D = PLAN[k];
+    const cls = ["day", D.rest ? "rest" : "", k === today ? "today" : ""].filter(Boolean).join(" ");
+    return `<button type="button" role="tab" class="${cls}" id="day-${k}" data-day="${k}" aria-selected="${k === state.day}" aria-label="${esc(D.day)}: ${esc(D.full || D.name)}${k === today ? " (today)" : ""}"><span class="d">${esc(D.day.slice(0, 3))}</span><span class="n">${esc(D.name)}</span><span class="c" aria-hidden="true"><i></i></span></button>`;
+  }).join("");
+}
+
+function countFor(dayKey, w) {
+  const done = getDoc("w" + w).done || {};
+  let total = 0, n = 0;
+  for (const b of PLAN[dayKey].blocks) {
+    if (b.kind === "routine") { total++; if (done[`${dayKey}-${b.id}`]) n++; }
+    else if (b.kind === "list") for (const it of b.items) { total++; if (done[`${dayKey}-${it.id}`]) n++; }
+  }
+  return { total, n };
+}
+
+function updateCounts() {
+  const w = state.week;
+  DAY_ORDER.forEach(k => {
+    const { total, n } = countFor(k, w);
+    const bar = $(`#day-${k} .c i`);
+    if (bar) bar.style.width = (total ? Math.round(100 * n / total) : 0) + "%";
+  });
+  const { total, n } = countFor(state.day, w);
+  const sbar = $("#s-bar");
+  if (sbar) sbar.style.width = (total ? Math.round(100 * n / total) : 0) + "%";
+  const st = $("#s-count");
+  if (st) st.textContent = n === total && total ? `All ${total} done. Nice work.` : `${n} of ${total} done`;
+}
+
+/* ---------- session ---------- */
+function blockHead(b, p) {
+  const note = pick(b.note, p);
+  return `<div class="b-head"><span class="plate" aria-hidden="true"></span><div class="b-txt"><p class="b-label">${esc(b.label)}</p><h3 class="b-title">${esc(b.title)}</h3>${note ? `<p class="b-note">${esc(note)}</p>` : ""}</div></div>`;
+}
+
+function renderItem(it, dayKey, w, p, light) {
+  const key = `${dayKey}-${it.id}`;
+  const name = pick(it.name, p);
+  const baseRx = pick(it.rx, p);
+  const rx = light ? lighten(baseRx) : baseRx;
+  const meta = pick(it.meta, p);
+  const q = pick(it.yt, p) || name + " exercise form";
+  const open = openHow.has(key);
+  const howId = `how-${key}`;
+  const log = it.ph === false ? "" :
+    `<input class="log" type="text" id="log-${w}-${key}" data-bind="log|w${w}|${key}" placeholder="${esc(it.ph || "notes")}" maxlength="80" autocomplete="off" enterkeyhint="done" aria-label="Log for ${esc(name)}">`;
+  return `<li class="item" data-key="${key}">
+    <label class="check"><input type="checkbox" id="chk-${w}-${key}" data-bind="done|w${w}|${key}"><span class="box" aria-hidden="true"></span><span class="sr">${esc(name)} done</span></label>
+    <div class="i-body">
+      <p class="i-name">${it.pair ? `<span class="pair">${esc(it.pair)}</span>` : ""}${esc(name)}${it.tag ? `<span class="tag">${esc(it.tag)}</span>` : ""}</p>
+      <p class="rx">${esc(rx)}${light && rx !== baseRx ? '<span class="lighter">Lighter</span>' : ""}</p>
+      ${meta ? `<p class="i-meta">${esc(meta)}</p>` : ""}
+      <div class="i-tools">${log}<button type="button" class="how" data-how="${key}" aria-expanded="${open}" aria-controls="${howId}">How to</button></div>
+      <div class="i-how" id="${howId}"${open ? "" : " hidden"}>
+        <ul class="cues">${(it.cues || []).map(c => `<li>${esc(c)}</li>`).join("")}</ul>
+        ${it.why ? `<p class="why">${esc(it.why)}</p>` : ""}
+        ${it.swap ? `<p class="swap"><b>Swap:</b> ${esc(it.swap)}</p>` : ""}
+        <a class="watch" href="${ytUrl(q)}" target="_blank" rel="noopener noreferrer">Watch form videos</a>
+      </div>
+    </div>
+  </li>`;
+}
+
+function renderRoutine(b, dayKey, w, p) {
+  const key = `${dayKey}-${b.id}`;
+  const open = key in routineOpen ? routineOpen[key] : !!b.open;
+  const count = b.stages.reduce((s, st) => s + st.moves.length, 0);
+  const numbered = b.stages.length > 1;
+  const body = b.stages.map((st, i) => `<div><p class="r-sname">${numbered ? `<span class="r-num">${i + 1}</span>` : ""}${esc(st.name)}</p><ul class="r-list">${st.moves.map(m => `<li><span class="r-move">${esc(m[0])}${m[2] ? `<span class="r-cue">${esc(m[2])}</span>` : ""}</span><span class="r-dose">${esc(m[1])}</span></li>`).join("")}</ul></div>`).join("");
+  return `<section class="block" data-type="${b.type}">
+    ${blockHead(b, p)}
+    <details class="r-details" data-routine="${key}"${open ? " open" : ""}>
+      <summary><span><span class="when-closed">Show all ${count} moves</span><span class="when-open">Hide moves</span><span class="r-sum">${esc(b.summary || "")}</span></span></summary>
+      <div class="r-body">${body}</div>
+    </details>
+    <label class="r-done"><span class="check"><input type="checkbox" id="chk-${w}-${key}" data-bind="done|w${w}|${key}"><span class="box" aria-hidden="true"></span></span><span>${esc(b.doneLabel || "Done")}</span></label>
+  </section>`;
+}
+
+function renderCheckin(b, w, p) {
+  const f = (id, label, ph, max, mode) => `<div class="field"><label for="ci-${id}-${w}">${label}</label><input class="inp" id="ci-${id}-${w}" type="text" inputmode="${mode}" maxlength="${max}" data-bind="ci|w${w}|${id}" placeholder="${ph}" autocomplete="off"></div>`;
+  const energy = [1, 2, 3, 4, 5].map(n => `<label><input type="radio" name="energy-${w}" id="ci-en-${w}-${n}" value="${n}" data-bind="ci|w${w}|energy"><span>${n}</span></label>`).join("");
+  return `<section class="block" data-type="${b.type}">
+    ${blockHead(b, p)}
+    <div class="fields">
+      ${f("bw", "Bodyweight (kg)", "e.g. 65.4", 6, "decimal")}
+      ${f("sleep", "Average sleep (hours)", "e.g. 8.5", 4, "decimal")}
+      <fieldset class="field"><legend>Energy this week</legend><div class="seg">${energy}</div><p class="seg-l"><span>Wiped</span><span>Great</span></p></fieldset>
+      <div class="field wide"><label for="ci-pain-${w}">Anything hurting?</label><input class="inp" id="ci-pain-${w}" type="text" maxlength="120" data-bind="ci|w${w}|pain" placeholder="Where, and how bad out of 10" autocomplete="off"></div>
+    </div>
+    <p class="ci-note">Pain that lasts more than a week or keeps getting worse: read “See a doctor or physio if” in the Guide before training through it.</p>
+  </section>`;
+}
+
+function testNotice(dayKey, w) {
+  const t = TEST_DAY[dayKey];
+  if (!t || !isTest(w)) return "";
+  const title = w === 1 ? "Baseline tests today" : w === 12 ? "Retest today" : "Check-in tests today";
+  const inputs = t.ids.map(id => {
+    const T = TESTS.find(x => x.id === id);
+    return `<div><label for="tn-${id}-${w}">${esc(T.name)} (${esc(T.unit)})</label><input class="inp" id="tn-${id}-${w}" type="text" inputmode="decimal" maxlength="8" data-bind="bench|${id}|${w}" autocomplete="off"></div>`;
+  }).join("");
+  return `<div class="notice"><h4>${title}</h4><p>${esc(t.when)}. Results also show up in Progress, with how-to notes for each test.</p><div class="t-list">${inputs}</div></div>`;
+}
+
+function renderSession() {
+  const w = state.week, p = phaseOf(w), light = isLight(w), k = state.day, D = PLAN[k];
+  let h = `<header class="s-head">
+    <p class="s-kicker mono-l"><span>${esc(D.day)}</span><span aria-hidden="true">·</span><span>${esc(D.time)}</span><span aria-hidden="true">·</span><span>Week ${w}</span></p>
+    <h2 class="s-name">${esc(D.full || D.name)}</h2>
+    <p class="s-focus">${esc(D.focus)}</p>
+    <p class="s-why">${esc(D.why)}</p>
+    ${D.note ? `<p class="s-note">${esc(D.note)}</p>` : ""}
+    <div class="s-prog"><div class="bar" aria-hidden="true"><i id="s-bar"></i></div><span id="s-count"></span></div>
+  </header>`;
+  h += testNotice(k, w);
+  if (light && !D.rest && w !== 12) h += `<div class="notice"><h4>Lighter week</h4><p>Sets below are already cut roughly in half. Use about 10% less weight than last week and keep sprints at about 90%. You should finish feeling fresh.</p></div>`;
+  if (w === 12 && !D.rest) h += `<div class="notice"><h4>Test week</h4><p>Train light: sets are already halved, so keep the weights moderate. Save your effort for the tests.</p></div>`;
+  for (const b of D.blocks) {
+    if (b.kind === "routine") h += renderRoutine(b, k, w, p);
+    else if (b.kind === "checkin") h += renderCheckin(b, w, p);
+    else h += `<section class="block" data-type="${b.type}">${blockHead(b, p)}<ol class="items">${b.items.map(it => renderItem(it, k, w, p, light)).join("")}</ol></section>`;
+  }
+  const el = $("#session");
+  el.innerHTML = h;
+  syncInputs(el);
+  updateCounts();
+}
+
+function selectDay(k) {
+  if (!PLAN[k]) return;
+  state.day = k;
+  $$(".day").forEach(b => b.setAttribute("aria-selected", String(b.dataset.day === k)));
+  renderSession();
+}
+
+function setWeek(n) {
+  n = Math.min(12, Math.max(1, n));
+  if (n === state.week) return;
+  state.week = n;
+  weekTouched = true;
+  mutDoc("prefs").week = n;
+  save("prefs");
+  renderWeekbar();
+  renderSession();
+  if (state.tab === "progress") renderProgress();
+}
+
+/* ---------- progress ---------- */
+function renderBench() {
+  $("#bench").innerHTML = TESTS.map(t => `<div class="b-card">
+    <div class="b-top"><h4>${esc(t.name)}</h4><span class="unit">${esc(t.unit)}${t.better === "down" ? " · lower is better" : ""}</span></div>
+    <p class="b-how">${esc(t.how)}</p>
+    <div class="b-row">${CHECKPOINTS.map(c => `<div><label for="bn-${t.id}-${c}">Wk ${c}</label><input class="inp" id="bn-${t.id}-${c}" type="text" inputmode="decimal" maxlength="8" data-bind="bench|${t.id}|${c}" autocomplete="off"></div>`).join("")}</div>
+    <p class="delta" data-delta="${t.id}"></p>
+  </div>`).join("");
+}
+
+function updateBenchDeltas() {
+  const v = getDoc("bench").v || {};
+  TESTS.forEach(t => {
+    const el = $(`[data-delta="${t.id}"]`);
+    if (!el) return;
+    const vals = CHECKPOINTS.map(c => ({ c, n: parseNum((v[t.id] || {})[c]) })).filter(x => x.n != null);
+    el.className = "delta";
+    if (vals.length < 2) { el.textContent = vals.length ? "Baseline set" : ""; return; }
+    const a = vals[0], b = vals[vals.length - 1];
+    const d = b.n - a.n;
+    const dec = t.unit === "s" ? 2 : 1;
+    const sign = d > 0 ? "+" : d < 0 ? "−" : "±";
+    let mark = "";
+    if (d !== 0 && (t.better === "up" || t.better === "down")) {
+      const good = (d > 0) === (t.better === "up");
+      el.classList.add(good ? "good" : "bad");
+      mark = good ? "▲ " : "▼ ";
+    }
+    el.textContent = `${mark}${sign}${fmt(Math.abs(d), dec)} ${t.unit === "/ 10" ? "pts" : t.unit} since week ${a.c}`;
+  });
+}
+
+function renderBwGrid() {
+  let h = "";
+  for (let w = 1; w <= 12; w++) {
+    h += `<div class="bw-cell${w === state.week ? " now" : ""}"><label for="bw-${w}">Wk ${w}</label><input class="inp" id="bw-${w}" type="text" inputmode="decimal" maxlength="6" placeholder="kg" data-bind="ci|w${w}|bw" autocomplete="off"></div>`;
+  }
+  $("#bw-grid").innerHTML = h;
+}
+
+function renderSkills() {
+  $("#skills").innerHTML = SKILLS.map(g => `<section class="sk-group"><h4>${esc(g.name)}</h4><p class="sub">${esc(g.sub)}</p><ul class="sk-list">${g.items.map(([id, name]) => `<li><label class="sk"><span class="check"><input type="checkbox" id="sk-${id}" data-bind="skill|${id}"><span class="box" aria-hidden="true"></span></span><span>${esc(name)}</span></label></li>`).join("")}</ul></section>`).join("");
+}
+
+function updateSkillCount() {
+  const done = getDoc("skills").done || {};
+  const total = SKILLS.reduce((s, g) => s + g.items.length, 0);
+  const n = SKILLS.reduce((s, g) => s + g.items.filter(([id]) => done[id]).length, 0);
+  $("#sk-count").textContent = `· ${n} of ${total}`;
+}
+
+/* bodyweight chart: one series, the target band, crosshair + tooltip */
+let chartPts = [], chartGeom = null;
+function renderBwChart() {
+  const host = $("#bw-chart");
+  if (!host || host.offsetParent === null) return;
+  const pts = [];
+  for (let w = 1; w <= 12; w++) {
+    const v = parseNum((getDoc("w" + w).checkin || {}).bw);
+    if (v != null && v > 25 && v < 250) pts.push({ w, v });
+  }
+  chartPts = pts;
+  if (!pts.length) {
+    host.innerHTML = '<p class="chart-empty">Log your bodyweight in Sunday’s check-in or in the boxes below. Your trend appears here, against a target band of +0.25 to 0.5 kg a week.</p>';
+    chartGeom = null;
+    return;
+  }
+  const W = Math.max(280, Math.round(host.clientWidth)), H = 220;
+  const m = { l: 40, r: 70, t: 14, b: 28 };
+  const s = pts[0];
+  const lo = w => s.v + 0.25 * (w - s.w), hi = w => s.v + 0.5 * (w - s.w);
+  const vals = pts.map(p => p.v).concat([lo(12), hi(12)]);
+  let yMin = Math.floor(Math.min(...vals) - 0.6), yMax = Math.ceil(Math.max(...vals) + 0.6);
+  if (yMax - yMin < 4) yMax = yMin + 4;
+  const step = yMax - yMin > 12 ? 4 : yMax - yMin > 6 ? 2 : 1;
+  yMin = Math.floor(yMin / step) * step;
+  yMax = Math.ceil(yMax / step) * step;
+  const X = w => m.l + (w - 1) * (W - m.l - m.r) / 11;
+  const Y = v => m.t + (yMax - v) * (H - m.t - m.b) / (yMax - yMin);
+  let g = "";
+  for (let v = yMin; v <= yMax + 1e-9; v += step) {
+    g += `<line class="grid" x1="${m.l}" x2="${W - m.r}" y1="${Y(v)}" y2="${Y(v)}"></line><text x="${m.l - 8}" y="${Y(v) + 4}" text-anchor="end">${v}</text>`;
+  }
+  const every = W < 420 ? [1, 4, 8, 12] : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  every.forEach(w => { g += `<text x="${X(w)}" y="${H - 8}" text-anchor="middle">W${w}</text>`; });
+  const up = [], down = [];
+  for (let w = s.w; w <= 12; w++) { up.push(`${X(w)},${Y(hi(w))}`); down.unshift(`${X(w)},${Y(lo(w))}`); }
+  const band = s.w < 12 ? `<polygon class="band" points="${up.concat(down).join(" ")}"></polygon>` : "";
+  const path = pts.map((p, i) => `${i ? "L" : "M"}${X(p.w)},${Y(p.v)}`).join("");
+  const dots = pts.map(p => `<circle class="dot" cx="${X(p.w)}" cy="${Y(p.v)}" r="4"></circle>`).join("");
+  const last = pts[pts.length - 1];
+  const endLbl = `<text class="end" x="${X(last.w) + 10}" y="${Y(last.v) + 4}">${fmt(last.v)} kg</text>`;
+  const mid12 = (lo(12) + hi(12)) / 2;
+  const bandLbl = s.w < 12 && Math.abs(Y(mid12) - Y(last.v)) > 16 ? `<text x="${X(12) + 10}" y="${Y(mid12) + 4}">target</text>` : "";
+  host.innerHTML = `<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" tabindex="0" aria-label="Bodyweight by week, ${pts.length} entries, latest ${fmt(last.v)} kg in week ${last.w}. Use arrow keys to step through weeks.">
+    ${g}${band}<path class="line" d="${path}"></path>${dots}${endLbl}${bandLbl}
+    <line class="xhair" y1="${m.t}" y2="${H - m.b}" x1="0" x2="0" visibility="hidden"></line>
+    <rect class="hit" x="${m.l}" y="${m.t}" width="${W - m.l - m.r}" height="${H - m.t - m.b}"></rect>
+  </svg><div class="tip" hidden></div>`;
+  chartGeom = { X, Y, lo, hi, W, s, m };
+  const svg = host.querySelector("svg");
+  const hit = host.querySelector(".hit");
+  let focusIdx = pts.length - 1;
+  hit.addEventListener("pointermove", e => {
+    const r = svg.getBoundingClientRect();
+    const x = (e.clientX - r.left) * (W / r.width);
+    let best = 0, bd = Infinity;
+    pts.forEach((p, i) => { const d = Math.abs(X(p.w) - x); if (d < bd) { bd = d; best = i; } });
+    focusIdx = best;
+    showTip(best);
+  });
+  hit.addEventListener("pointerleave", hideTip);
+  svg.addEventListener("focus", () => showTip(focusIdx));
+  svg.addEventListener("blur", hideTip);
+  svg.addEventListener("keydown", e => {
+    if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+      e.preventDefault();
+      focusIdx = Math.max(0, Math.min(pts.length - 1, focusIdx + (e.key === "ArrowRight" ? 1 : -1)));
+      showTip(focusIdx);
+    }
+  });
+}
+
+function showTip(i) {
+  const host = $("#bw-chart");
+  const p = chartPts[i];
+  if (!p || !chartGeom) return;
+  const { X, Y, lo, hi, W, s } = chartGeom;
+  const xh = host.querySelector(".xhair");
+  xh.setAttribute("x1", X(p.w));
+  xh.setAttribute("x2", X(p.w));
+  xh.setAttribute("visibility", "visible");
+  const tip = host.querySelector(".tip");
+  tip.replaceChildren();
+  const b = document.createElement("b");
+  b.textContent = fmt(p.v) + " kg";
+  const s1 = document.createElement("span");
+  s1.textContent = "Week " + p.w;
+  tip.append(b, s1);
+  if (p.w > s.w) {
+    const s2 = document.createElement("span");
+    s2.textContent = `Target ${fmt(lo(p.w))}–${fmt(hi(p.w))} kg`;
+    tip.append(s2);
+  }
+  tip.hidden = false;
+  const tw = tip.offsetWidth;
+  const left = Math.max(0, Math.min(W - tw, X(p.w) - tw / 2));
+  const top = Math.max(0, Y(p.v) - tip.offsetHeight - 14);
+  tip.style.left = left + "px";
+  tip.style.top = top + "px";
+}
+
+function hideTip() {
+  const host = $("#bw-chart");
+  const tip = host && host.querySelector(".tip");
+  const xh = host && host.querySelector(".xhair");
+  if (tip) tip.hidden = true;
+  if (xh) xh.setAttribute("visibility", "hidden");
+}
+
+function renderProgress() {
+  renderBwGrid();
+  syncInputs($("#panel-progress"));
+  renderBwChart();
+  updateBenchDeltas();
+  updateSkillCount();
+}
+
+/* ---------- tabs ---------- */
+function showTab(name) {
+  const btn = $(`#tab-${name}`);
+  if (!btn || btn.hidden) name = "plan";
+  state.tab = name;
+  $$(".tab").forEach(b => b.setAttribute("aria-selected", String(b.dataset.tab === name)));
+  $$(".panel").forEach(p => { p.hidden = p.id !== "panel-" + name; });
+  if (name === "progress") renderProgress();
+  const top = $(".hero").offsetHeight;
+  if (window.scrollY > top) window.scrollTo(0, top);
+}
+
+/* ---------- remote updates (another device saved) ---------- */
+function onRemoteChange(weekChanged) {
+  if (weekChanged) { renderWeekbar(); renderSession(); }
+  syncInputs(document);
+  updateCounts();
+  if (state.tab === "progress") { renderBwChart(); updateBenchDeltas(); updateSkillCount(); }
+}
+
+/* ---------- events ---------- */
+function afterChange(bind) {
+  syncInputs(document);
+  updateCounts();
+  const k = bind.split("|")[0];
+  if (k === "bench") updateBenchDeltas();
+  if (k === "skill") updateSkillCount();
+  if (k === "ci" && bind.endsWith("|bw") && state.tab === "progress") renderBwChart();
+}
+
+document.addEventListener("change", e => {
+  const el = e.target;
+  if (!el.dataset || !el.dataset.bind) return;
+  let changed;
+  if (el.type === "checkbox") changed = bindSet(el.dataset.bind, el.checked);
+  else if (el.type === "radio") changed = el.checked && bindSet(el.dataset.bind, el.value);
+  else changed = bindSet(el.dataset.bind, el.value.trim());
+  if (changed) afterChange(el.dataset.bind);
+});
+
+document.addEventListener("input", e => {
+  const el = e.target;
+  if (!el.dataset || !el.dataset.bind || el.type === "checkbox" || el.type === "radio") return;
+  if (bindSet(el.dataset.bind, el.value.trim())) {
+    const k = el.dataset.bind.split("|")[0];
+    if (k === "bench") updateBenchDeltas();
+    if (k === "ci" && el.dataset.bind.endsWith("|bw") && state.tab === "progress") renderBwChart();
+  }
+});
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Enter" && e.target.matches && e.target.matches("input.log, input.inp")) e.target.blur();
+});
+
+document.addEventListener("click", e => {
+  const t = e.target.closest("button");
+  if (!t) return;
+  if (t.dataset.tab) { showTab(t.dataset.tab); return; }
+  if (t.dataset.day) { selectDay(t.dataset.day); return; }
+  if (t.dataset.week) { setWeek(Number(t.dataset.week)); return; }
+  if (t.id === "wk-prev") { setWeek(state.week - 1); return; }
+  if (t.id === "wk-next") { setWeek(state.week + 1); return; }
+  if (t.dataset.how) {
+    const key = t.dataset.how;
+    const panel = document.getElementById("how-" + key);
+    const open = panel.hidden;
+    panel.hidden = !open;
+    t.setAttribute("aria-expanded", String(open));
+    if (open) openHow.add(key); else openHow.delete(key);
+    return;
+  }
+  if (t.dataset.q) { $("#ask-q").value = t.dataset.q; ask(); return; }
+  if (t.id === "bk-copy") { copyBackup(); return; }
+  if (t.id === "bk-restore") { startRestore(); return; }
+  if (t.id === "bk-yes") { applyRestore(); return; }
+  if (t.id === "bk-no") { cancelRestore(); return; }
+  if (t.id === "ask-go") { ask(); return; }
+  if (t.id === "ask-stop" && askCtl) { askCtl.abort(); }
+});
+
+document.addEventListener("toggle", e => {
+  const d = e.target;
+  if (d.matches && d.matches("details[data-routine]")) routineOpen[d.dataset.routine] = d.open;
+}, true);
+
+$("#days").addEventListener("keydown", e => {
+  if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+  const i = DAY_ORDER.indexOf(state.day);
+  const next = DAY_ORDER[(i + (e.key === "ArrowRight" ? 1 : 6)) % 7];
+  selectDay(next);
+  $(`#day-${next}`).focus();
+});
+
+let resizeRaf = 0;
+if ("ResizeObserver" in window) {
+  new ResizeObserver(() => {
+    cancelAnimationFrame(resizeRaf);
+    resizeRaf = requestAnimationFrame(() => { if (state.tab === "progress") renderBwChart(); });
+  }).observe($("#panel-progress"));
+}
+
+/* ---------- backup: a copyable code that holds the whole log ---------- */
+const BK_PREFIX = "AB1:";
+const DOC_ID_OK = /^(w([1-9]|1[0-2])|bench|skills|prefs)$/;
+let pendingRestore = null;
+function bkMsg(text) { $("#bk-msg").textContent = text || ""; }
+
+function makeBackup() {
+  const data = {};
+  for (const [id, body] of Object.entries(store.data)) if (DOC_ID_OK.test(id) && hasContent(body)) data[id] = body;
+  return BK_PREFIX + btoa(unescape(encodeURIComponent(JSON.stringify(data))));
+}
+
+function readBackup(text) {
+  const t = String(text || "").replace(/\s+/g, "");
+  if (!t.startsWith(BK_PREFIX)) return null;
+  try {
+    const obj = JSON.parse(decodeURIComponent(escape(atob(t.slice(BK_PREFIX.length)))));
+    if (!obj || typeof obj !== "object" || Array.isArray(obj)) return null;
+    const out = {};
+    for (const [id, body] of Object.entries(obj)) {
+      if (DOC_ID_OK.test(id) && body && typeof body === "object" && !Array.isArray(body)) out[id] = body;
+    }
+    return out;
+  } catch (e) {
+    return null;
+  }
+}
+
+function copyBackup() {
+  const code = makeBackup();
+  const out = $("#bk-out");
+  const fallback = () => {
+    out.value = code;
+    out.hidden = false;
+    out.focus();
+    out.select();
+    bkMsg("Copy the selected code below, then paste it into Notes.");
+  };
+  try {
+    navigator.clipboard.writeText(code).then(() => {
+      out.hidden = true;
+      bkMsg("Backup copied. Paste it into Notes or send it to yourself.");
+    }, fallback);
+  } catch (e) {
+    fallback();
+  }
+}
+
+function startRestore() {
+  const data = readBackup($("#bk-text").value);
+  if (!data) { bkMsg("That isn't a backup code. Paste the whole code, starting with AB1:"); return; }
+  pendingRestore = data;
+  bkMsg("");
+  $("#bk-restore").hidden = true;
+  $("#bk-confirm").hidden = false;
+}
+
+function cancelRestore() {
+  pendingRestore = null;
+  $("#bk-confirm").hidden = true;
+  $("#bk-restore").hidden = false;
+}
+
+function applyRestore() {
+  const data = pendingRestore;
+  cancelRestore();
+  if (!data) return;
+  const ids = new Set(Object.keys(store.data).concat(Object.keys(data)));
+  store.data = clone(data);
+  saveLocal();
+  if (store.db) {
+    ids.forEach(id => {
+      if (!DOC_ID_OK.test(id)) return;
+      if (!store.data[id]) store.data[id] = {};
+      dirty.add(id);
+      flush(id);
+    });
+  }
+  const w = getDoc("prefs").week;
+  if (w >= 1 && w <= 12) state.week = w;
+  renderWeekbar();
+  renderSession();
+  renderProgress();
+  $("#bk-text").value = "";
+  bkMsg("Log restored.");
+}
+
+/* ---------- ask Claude ---------- */
+let sampleFn = null, askCtl = null;
+const ASK_OFF = ["not_granted", "sampling_disabled", "not_declared", "capability_disabled", "capability_removed"];
+
+function planSummary(w) {
+  const p = phaseOf(w), light = isLight(w);
+  return DAY_ORDER.map(k => {
+    const D = PLAN[k];
+    const parts = D.blocks.map(b => {
+      if (b.kind === "routine") return b.title + " (" + b.label + ")";
+      if (b.kind === "checkin") return null;
+      return b.items.map(it => {
+        const rx = pick(it.rx, p);
+        return `${pick(it.name, p)} ${light ? lighten(rx) : rx}`;
+      }).join("; ");
+    }).filter(Boolean);
+    return `${D.day} – ${D.full || D.name}: ${parts.join("; ")}`;
+  }).join("\n");
+}
+
+function buildPrompt(q) {
+  const w = state.week, p = phaseOf(w);
+  const weekNote = w === 12 ? " (test week, light training)" : isLight(w) ? " (lighter week, sets halved)" : "";
+  return [
+    "You are a careful, encouraging strength and conditioning coach helping a teenage athlete adjust their training plan.",
+    "Athlete: a teenage multi-sport athlete. Goals: speed, mobility, back health, endurance, and an athletic (not bodybuilder) physique.",
+    `Current week: ${w} of 12, phase ${p} (${PHASES[p].name})${weekNote}. Today they are looking at ${PLAN[state.day].day}.`,
+    "This week's plan:",
+    planSummary(w),
+    "Plan rules: most sets stop with 2 reps in reserve; no 1-rep maxes; sprints and jumps are done fresh with full rest; heavy leg work stays at least 48 hours before games; sport takes priority; nutrition is food first.",
+    `Their question: """${q}"""`,
+    "Answer in plain text with no markdown symbols (no ** or #). Be specific to this plan: name exact exercises, swaps, sets and reps. Keep it under 200 words, using short lines and \"• \" bullets where helpful.",
+    "If the question involves pain, injury or worrying symptoms, give conservative advice, suggest a pain-free swap, and recommend seeing a doctor or physio; don't diagnose. Never recommend supplements beyond normal food and optional protein powder, and never anything about steroids, SARMs or cutting weight."
+  ].join("\n\n");
+}
+
+function askMsg(text) { $("#ask-msg").textContent = text || ""; }
+
+async function ask() {
+  const q = $("#ask-q").value.trim();
+  if (!sampleFn) return;
+  if (!q) { askMsg("Type a question first."); $("#ask-q").focus(); return; }
+  if (askCtl) askCtl.abort();
+  const ctl = new AbortController();
+  askCtl = ctl;
+  const out = $("#ask-out");
+  out.hidden = false;
+  out.textContent = "Thinking…";
+  askMsg("");
+  $("#ask-go").disabled = true;
+  $("#ask-stop").hidden = false;
+  try {
+    const res = await sampleFn(buildPrompt(q), { signal: ctl.signal, onText: ({ text }) => { out.textContent = text; } });
+    out.textContent = res.text;
+    if (res.truncated) askMsg("The answer was cut short. Try a narrower question.");
+  } catch (e) {
+    const code = e && e.code;
+    if (code === "cancelled") { out.textContent = (e && e.text) || ""; if (!out.textContent) out.hidden = true; }
+    else if (ASK_OFF.includes(code)) {
+      out.hidden = true;
+      askMsg("Asking Claude isn't available here.");
+      $("#ask-go").hidden = true;
+      $("#ask-chips").hidden = true;
+    } else if (code === "rate_limited") { out.textContent = (e && e.text) || ""; askMsg("Too many questions at once. Try again in a minute."); }
+    else if (code === "session_expired") { askMsg("Sign in to Claude again, then ask."); }
+    else if (code === "refused") { out.textContent = ""; out.hidden = true; askMsg("Claude couldn't answer that one. Try asking it differently."); }
+    else { out.textContent = (e && e.text) || ""; if (!out.textContent) out.hidden = true; askMsg("Something went wrong. Try again."); }
+  } finally {
+    if (askCtl === ctl) askCtl = null;
+    $("#ask-go").disabled = false;
+    $("#ask-stop").hidden = true;
+  }
+}
+
+async function enableAsk() {
+  if (!window.claude || typeof window.claude.use !== "function") return;
+  let s = null;
+  try { s = await window.claude.use("sample"); } catch (e) { s = null; }
+  if (!s) return;
+  sampleFn = s;
+  $("#tab-ask").hidden = false;
+  if ((location.hash || "") === "#ask") showTab("ask");
+}
+
+/* ---------- start ---------- */
+setSaveStatus(canLocal ? "local" : "nolocal");
+renderWeekbar();
+renderDays();
+renderSession();
+renderBench();
+renderSkills();
+syncInputs($("#panel-progress"));
+showTab(state.tab);
+connect();
+enableAsk();
+})();
+
+</script>
+<script>
+if ("serviceWorker" in navigator && location.protocol === "https:") {
+  window.addEventListener("load", () => { navigator.serviceWorker.register("sw.js").catch(() => {}); });
+}
+</script>
+</body>
+</html>
